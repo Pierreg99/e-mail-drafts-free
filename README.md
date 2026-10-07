@@ -12,3 +12,4 @@ Open `index.html` locally, or enable GitHub Pages on `main` / root.
 Replace every `[TOKEN]` before sending. This repository contains no live mailbox data.
 
 Edition: CryoSys Enterprise v3. Factory mode: dense.
+Draft texts: `drafts/INDEX.md` (36 markdown files and matching text PDFs). Still anonymized.
