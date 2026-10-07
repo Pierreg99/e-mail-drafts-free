@@ -1,5 +1,7 @@
 <div align="center">
 
+<img src="./assets/readme-banner.svg" alt="e-mail-drafts-free" width="100%">
+
 # Email drafts free
 
 <p><strong>Anonymisierte E-Mail-Entwürfe für zwölf Alltagsfälle, jeweils auf Englisch, Deutsch und zweisprachig.</strong></p>
@@ -12,10 +14,38 @@
 <p><a href="#schnellstart">Schnellstart</a> · <a href="#projektstruktur">Projektstruktur</a> · <a href="#english-summary">English</a></p>
 </div>
 
+<table>
+<tr>
+<td width="58%" valign="top">
+
+### Bestand
+
+Keine Beschreibung im Repo-Metadatum. Dieses README erfindet deshalb keine Funktionen, Releases oder Laufzeiten.
+
+Der Default-Branch `main` ist die Fläche, die zählt. Was nicht in diesem Baum liegt, ist kein Feature dieses Repos.
+
+</td>
+<td width="42%" valign="top">
+
+### Fakten
+
+| Feld | Wert |
+| --- | --- |
+| Owner | Pierreg99 |
+| Branch | `main` |
+| Sichtbarkeit | öffentlich |
+| Sprache | JavaScript |
+| Archiv | nein |
+
+</td>
+</tr>
+</table>
+
 ---
 
 ## Inhaltsverzeichnis
 
+- [Bestand und Fakten](#bestand)
 - [Überblick](#überblick)
 - [Features](#features)
 - [Schnellstart](#schnellstart)
@@ -32,7 +62,7 @@ Anonymisierte E-Mail-Entwürfe für zwölf Alltagsfälle, jeweils auf Englisch, 
 | Merkmal | Wert |
 | --- | --- |
 | Sprachen | JavaScript (45%), CSS (28%), HTML (27%) |
-| Dateien im Repository | 81 |
+| Dateien im Repository | 82 |
 | Einstiegspunkte | `index.html` |
 
 ## Features
@@ -57,7 +87,8 @@ flowchart LR
     R(["e-mail-drafts-free"])
     R --> D0["drafts/<br/>73 Dateien"]
     R --> D1["docs/<br/>2 Dateien"]
-    R --> D2["data/<br/>1 Datei"]
+    R --> D2["assets/<br/>1 Datei"]
+    R --> D3["data/<br/>1 Datei"]
     E{{"Einstieg: index.html"}}
     E -.-> R
 ```
@@ -66,6 +97,8 @@ flowchart LR
 
 ```text
 e-mail-drafts-free/
+├── assets/  (1 Datei)
+│   └── readme-banner.svg
 ├── data/  (1 Datei)
 │   └── drafts.json
 ├── docs/  (2 Dateien)
