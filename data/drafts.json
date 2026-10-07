@@ -1,0 +1,688 @@
+{
+  "version": "1.0.0",
+  "anonymized": true,
+  "note": "Replace every [TOKEN] before sending. No live mailbox data is stored here.",
+  "batches": [
+    {
+      "id": "account-closure",
+      "title": "Closed account follow-up",
+      "title_de": "Nachfrage zur Kontoschliessung",
+      "when": "A provider closed an account and has not answered a payout or statement request."
+    },
+    {
+      "id": "decline-outreach",
+      "title": "Decline unused product",
+      "title_de": "Ungenutztes Produkt ablehnen",
+      "when": "A vendor asks why an account was never used."
+    },
+    {
+      "id": "cancel-confirm",
+      "title": "Cancellation confirmation",
+      "title_de": "Kuendigung bestaetigen lassen",
+      "when": "You need written confirmation of an end date and what to save before it."
+    },
+    {
+      "id": "security-login",
+      "title": "Unrecognized login",
+      "title_de": "Unbekannte Anmeldung",
+      "when": "A security notice names a device or place you do not recognize."
+    },
+    {
+      "id": "trial-end",
+      "title": "Trial ending",
+      "title_de": "Testphase endet",
+      "when": "A paid trial ends soon and you want to stop or keep it."
+    },
+    {
+      "id": "invoice",
+      "title": "Invoice clarification",
+      "title_de": "Rechnung klaeren",
+      "when": "A bill arrived after a cancellation or the amount looks wrong."
+    },
+    {
+      "id": "reschedule",
+      "title": "Reschedule appointment",
+      "title_de": "Termin verschieben",
+      "when": "You cannot keep a booked time and need a new slot."
+    },
+    {
+      "id": "late-reply",
+      "title": "Late reply",
+      "title_de": "Spaete Antwort",
+      "when": "A thread waited longer than you intended."
+    },
+    {
+      "id": "complaint",
+      "title": "Complaint escalation",
+      "title_de": "Beschwerde eskalieren",
+      "when": "A first request got no answer and you need a case reference."
+    },
+    {
+      "id": "meeting",
+      "title": "Meeting confirmation",
+      "title_de": "Meeting bestaetigen",
+      "when": "You accept a time and want the agenda in one place."
+    },
+    {
+      "id": "reference",
+      "title": "Reference request",
+      "title_de": "Referenz anfragen",
+      "when": "You ask a former colleague for a short reference."
+    },
+    {
+      "id": "repair",
+      "title": "Repair request",
+      "title_de": "Reparatur melden",
+      "when": "You report a housing defect and ask for a visit window."
+    }
+  ],
+  "drafts": [
+    {
+      "id": "account-closure-en",
+      "batch": "account-closure",
+      "lang": "en",
+      "tone": "formal",
+      "subject": "Follow-up: closed account [REFERENCE]",
+      "body": "Hello [SUPPORT],\n\nI am following up on the notice dated [DATE] that account [REFERENCE] at [COMPANY] was closed. I have not received a written reply.\n\nPlease confirm:\n1. The exact ground for closure.\n2. The balance on the notice date and today.\n3. Any fees deducted since [DATE], with amounts.\n4. Whether a refund or bank transfer has already started.\n5. Which documents you still need for a payout.\n\nIf more than [AMOUNT] [CURRENCY] remains, please pay it to:\nAccount holder: [NAME]\nIBAN: [IBAN]\nBIC: [BIC]\nBank: [BANK]\n\nPlease also send a closing statement to [EMAIL]. If you treat the matter as closed without payout, please open a complaint and send the reference plus the response deadline.\n\nKind regards,\n[NAME]\n",
+      "tokens": [
+        "[NAME]",
+        "[COMPANY]",
+        "[REFERENCE]",
+        "[DATE]",
+        "[EMAIL]",
+        "[SUPPORT]",
+        "[AMOUNT]",
+        "[CURRENCY]",
+        "[IBAN]",
+        "[BIC]",
+        "[BANK]"
+      ]
+    },
+    {
+      "id": "account-closure-de",
+      "batch": "account-closure",
+      "lang": "de",
+      "tone": "formal",
+      "subject": "Nachfrage: geschlossenes Konto [REFERENCE]",
+      "body": "Guten Tag [SUPPORT],\n\nich beziehe mich auf Ihre Mitteilung vom [DATE], dass das Konto [REFERENCE] bei [COMPANY] geschlossen wurde. Eine schriftliche Antwort habe ich bisher nicht erhalten.\n\nBitte bestaetigen Sie:\n1. den genauen Schliessungsgrund,\n2. den Saldo am Mitteilungsdatum und heute,\n3. seit [DATE] abgezogene Gebuehren mit Betraegen,\n4. ob eine Erstattung oder Ueberweisung bereits angestossen wurde,\n5. welche Unterlagen Sie fuer eine Auszahlung noch brauchen.\n\nLiegt mehr als [AMOUNT] [CURRENCY] bereit, bitte ich um Ueberweisung an:\nKontoinhaber: [NAME]\nIBAN: [IBAN]\nBIC: [BIC]\nBank: [BANK]\n\nBitte senden Sie ausserdem einen Abschlussauszug an [EMAIL]. Wenn Sie den Vorgang ohne Auszahlung als erledigt ansehen, eroeffnen Sie bitte eine Beschwerde und nennen Sie Aktenzeichen und Antwortfrist.\n\nMit freundlichen Gruessen\n[NAME]\n",
+      "tokens": [
+        "[NAME]",
+        "[COMPANY]",
+        "[REFERENCE]",
+        "[DATE]",
+        "[EMAIL]",
+        "[SUPPORT]",
+        "[AMOUNT]",
+        "[CURRENCY]",
+        "[IBAN]",
+        "[BIC]",
+        "[BANK]"
+      ]
+    },
+    {
+      "id": "account-closure-multi",
+      "batch": "account-closure",
+      "lang": "multi",
+      "tone": "formal",
+      "subject": "Follow-up / Nachfrage: closed account [REFERENCE]",
+      "body": "Hello [SUPPORT] / Guten Tag,\n\nEN: I am following up on the [DATE] closure of account [REFERENCE] at [COMPANY]. Please send the closure ground, both balances, fees since [DATE], payout status, and any missing documents. If more than [AMOUNT] [CURRENCY] remains, pay it to [NAME], IBAN [IBAN], BIC [BIC], [BANK]. Send the closing statement to [EMAIL]. If you close this without payout, open a complaint and send the reference and deadline.\n\nDE: Ich hake die Schliessung des Kontos [REFERENCE] vom [DATE] nach. Bitte nennen Sie Grund, beide Salden, Gebuehren seit [DATE], Auszahlungsstatus und fehlende Unterlagen. Liegt mehr als [AMOUNT] [CURRENCY] bereit, bitte an [NAME], IBAN [IBAN], BIC [BIC], [BANK]. Abschlussauszug an [EMAIL]. Ohne Auszahlung bitte Beschwerde mit Aktenzeichen und Frist.\n\nKind regards / Mit freundlichen Gruessen\n[NAME]\n",
+      "tokens": [
+        "[NAME]",
+        "[COMPANY]",
+        "[REFERENCE]",
+        "[DATE]",
+        "[EMAIL]",
+        "[SUPPORT]",
+        "[AMOUNT]",
+        "[CURRENCY]",
+        "[IBAN]",
+        "[BIC]",
+        "[BANK]"
+      ]
+    },
+    {
+      "id": "decline-outreach-en",
+      "batch": "decline-outreach",
+      "lang": "en",
+      "tone": "brief",
+      "subject": "Re: unused account",
+      "body": "Hi [NAME],\n\nThanks for checking. This is not an analytics error and I do not have another account. I signed up and have not needed the product, so I have not used the credits. No follow-up is needed.\n\nBest,\n[NAME]\n",
+      "tokens": [
+        "[NAME]"
+      ]
+    },
+    {
+      "id": "decline-outreach-de",
+      "batch": "decline-outreach",
+      "lang": "de",
+      "tone": "brief",
+      "subject": "Re: ungenutztes Konto",
+      "body": "Guten Tag [NAME],\n\ndanke fuer die Nachfrage. Es ist kein Auswertungsfehler, und ich habe kein zweites Konto. Ich habe mich registriert, das Produkt aber nicht gebraucht und deshalb nichts verbraucht. Eine weitere Nachfrage ist nicht noetig.\n\nViele Gruesse\n[NAME]\n",
+      "tokens": [
+        "[NAME]"
+      ]
+    },
+    {
+      "id": "decline-outreach-multi",
+      "batch": "decline-outreach",
+      "lang": "multi",
+      "tone": "brief",
+      "subject": "Re: unused account / ungenutztes Konto",
+      "body": "Hi [NAME],\n\nEN: Not an analytics error, and there is no second account. I signed up and have not needed the product, so nothing was used. No further follow-up, please.\n\nDE: Kein Auswertungsfehler und kein zweites Konto. Ich habe mich registriert, das Produkt aber nicht gebraucht. Bitte keine weitere Nachfrage.\n\nBest / Viele Gruesse\n[NAME]\n",
+      "tokens": [
+        "[NAME]"
+      ]
+    },
+    {
+      "id": "cancel-confirm-en",
+      "batch": "cancel-confirm",
+      "lang": "en",
+      "tone": "formal",
+      "subject": "Please confirm cancellation of [CONTRACT]",
+      "body": "Hello [SUPPORT],\n\nPlease confirm in writing that contract [CONTRACT] with [COMPANY] was cancelled on [DATE] and ends on [END DATE].\n\nPlease also state:\n1. The last day of service.\n2. What data or mailboxes will be deleted.\n3. Until when I can download invoices.\n4. Whether any further charge is planned.\n\nI will keep a backup before the end date. Please reply to [EMAIL].\n\nKind regards,\n[NAME]\n",
+      "tokens": [
+        "[NAME]",
+        "[COMPANY]",
+        "[REFERENCE]",
+        "[DATE]",
+        "[EMAIL]",
+        "[SUPPORT]",
+        "[CONTRACT]",
+        "[END DATE]"
+      ]
+    },
+    {
+      "id": "cancel-confirm-de",
+      "batch": "cancel-confirm",
+      "lang": "de",
+      "tone": "formal",
+      "subject": "Bitte Kuendigung von [CONTRACT] bestaetigen",
+      "body": "Guten Tag [SUPPORT],\n\nbitte bestaetigen Sie schriftlich, dass der Vertrag [CONTRACT] bei [COMPANY] am [DATE] gekuendigt wurde und am [END DATE] endet.\n\nBitte nennen Sie ausserdem:\n1. den letzten Leistungstag,\n2. welche Daten oder Postfaecher geloescht werden,\n3. bis wann ich Rechnungen herunterladen kann,\n4. ob noch eine Belastung geplant ist.\n\nIch sichere die Daten vor dem Enddatum. Bitte antworten Sie an [EMAIL].\n\nMit freundlichen Gruessen\n[NAME]\n",
+      "tokens": [
+        "[NAME]",
+        "[COMPANY]",
+        "[REFERENCE]",
+        "[DATE]",
+        "[EMAIL]",
+        "[SUPPORT]",
+        "[CONTRACT]",
+        "[END DATE]"
+      ]
+    },
+    {
+      "id": "cancel-confirm-multi",
+      "batch": "cancel-confirm",
+      "lang": "multi",
+      "tone": "formal",
+      "subject": "Confirm cancellation / Kuendigung bestaetigen: [CONTRACT]",
+      "body": "Hello [SUPPORT],\n\nEN: Please confirm that contract [CONTRACT] at [COMPANY], cancelled on [DATE], ends on [END DATE]. State the last service day, what will be deleted, how long invoices stay downloadable, and whether another charge is planned. Reply to [EMAIL].\n\nDE: Bitte bestaetigen Sie, dass Vertrag [CONTRACT] bei [COMPANY], Kuendigung am [DATE], am [END DATE] endet. Nennen Sie letzten Leistungstag, Loeschumfang, Rechnungszugriff und ob noch eine Belastung kommt. Antwort an [EMAIL].\n\nKind regards / Mit freundlichen Gruessen\n[NAME]\n",
+      "tokens": [
+        "[NAME]",
+        "[COMPANY]",
+        "[REFERENCE]",
+        "[DATE]",
+        "[EMAIL]",
+        "[SUPPORT]",
+        "[CONTRACT]",
+        "[END DATE]"
+      ]
+    },
+    {
+      "id": "security-login-en",
+      "batch": "security-login",
+      "lang": "en",
+      "tone": "firm",
+      "subject": "Unrecognized sign-in on [DATE]",
+      "body": "Hello [SUPPORT],\n\nI received a sign-in alert for account [ACCOUNT] on [DATE] from a device or place I do not recognize: [DEVICE OR PLACE].\n\nThat sign-in was not me. Please lock the session, confirm whether the account is still secure, and tell me which step I should take next from a previously used device.\n\nPlease reply to [EMAIL].\n\nKind regards,\n[NAME]\n",
+      "tokens": [
+        "[NAME]",
+        "[COMPANY]",
+        "[REFERENCE]",
+        "[DATE]",
+        "[EMAIL]",
+        "[SUPPORT]",
+        "[ACCOUNT]",
+        "[DEVICE OR PLACE]"
+      ]
+    },
+    {
+      "id": "security-login-de",
+      "batch": "security-login",
+      "lang": "de",
+      "tone": "firm",
+      "subject": "Unbekannte Anmeldung am [DATE]",
+      "body": "Guten Tag [SUPPORT],\n\nich habe eine Anmeldung fuer das Konto [ACCOUNT] am [DATE] erhalten, die ich nicht zuordnen kann: [DEVICE OR PLACE].\n\nDiese Anmeldung war nicht von mir. Bitte sperren Sie die Sitzung, bestaetigen Sie den Kontostatus und nennen Sie den naechsten Schritt, den ich von einem bereits genutzten Geraet aus machen soll.\n\nBitte antworten Sie an [EMAIL].\n\nMit freundlichen Gruessen\n[NAME]\n",
+      "tokens": [
+        "[NAME]",
+        "[COMPANY]",
+        "[REFERENCE]",
+        "[DATE]",
+        "[EMAIL]",
+        "[SUPPORT]",
+        "[ACCOUNT]",
+        "[DEVICE OR PLACE]"
+      ]
+    },
+    {
+      "id": "security-login-multi",
+      "batch": "security-login",
+      "lang": "multi",
+      "tone": "firm",
+      "subject": "Unrecognized sign-in / unbekannte Anmeldung [DATE]",
+      "body": "Hello [SUPPORT],\n\nEN: The [DATE] sign-in on account [ACCOUNT] from [DEVICE OR PLACE] was not me. Please lock that session, confirm the account status, and tell me the next step from a known device. Reply to [EMAIL].\n\nDE: Die Anmeldung am [DATE] auf Konto [ACCOUNT] von [DEVICE OR PLACE] war nicht von mir. Bitte Sitzung sperren, Status bestaetigen und den naechsten Schritt von einem bekannten Geraet nennen. Antwort an [EMAIL].\n\nKind regards / Mit freundlichen Gruessen\n[NAME]\n",
+      "tokens": [
+        "[NAME]",
+        "[COMPANY]",
+        "[REFERENCE]",
+        "[DATE]",
+        "[EMAIL]",
+        "[SUPPORT]",
+        "[ACCOUNT]",
+        "[DEVICE OR PLACE]"
+      ]
+    },
+    {
+      "id": "trial-end-en",
+      "batch": "trial-end",
+      "lang": "en",
+      "tone": "brief",
+      "subject": "Do not renew the trial on [WORKSPACE]",
+      "body": "Hello [SUPPORT],\n\nPlease do not convert the trial on workspace [WORKSPACE] into a paid plan when it ends on [DATE]. I do not need the extra features.\n\nPlease confirm that no charge will be made to the payment method on file, and reply to [EMAIL].\n\nThanks,\n[NAME]\n",
+      "tokens": [
+        "[NAME]",
+        "[COMPANY]",
+        "[REFERENCE]",
+        "[DATE]",
+        "[EMAIL]",
+        "[SUPPORT]",
+        "[WORKSPACE]"
+      ]
+    },
+    {
+      "id": "trial-end-de",
+      "batch": "trial-end",
+      "lang": "de",
+      "tone": "brief",
+      "subject": "Testphase auf [WORKSPACE] nicht verlaengern",
+      "body": "Guten Tag [SUPPORT],\n\nbitte wandeln Sie die Testphase im Workspace [WORKSPACE] am [DATE] nicht in einen kostenpflichtigen Plan um. Die Zusatzfunktionen brauche ich nicht.\n\nBitte bestaetigen Sie, dass keine Abbuchung erfolgt, und antworten Sie an [EMAIL].\n\nDanke\n[NAME]\n",
+      "tokens": [
+        "[NAME]",
+        "[COMPANY]",
+        "[REFERENCE]",
+        "[DATE]",
+        "[EMAIL]",
+        "[SUPPORT]",
+        "[WORKSPACE]"
+      ]
+    },
+    {
+      "id": "trial-end-multi",
+      "batch": "trial-end",
+      "lang": "multi",
+      "tone": "brief",
+      "subject": "Do not renew trial / Testphase nicht verlaengern: [WORKSPACE]",
+      "body": "Hello [SUPPORT],\n\nEN: Do not convert the [WORKSPACE] trial into a paid plan on [DATE]. Please confirm that no charge will be made. Reply to [EMAIL].\n\nDE: Bitte die Testphase in [WORKSPACE] am [DATE] nicht kostenpflichtig machen. Bitte bestaetigen, dass nichts abgebucht wird. Antwort an [EMAIL].\n\nThanks / Danke\n[NAME]\n",
+      "tokens": [
+        "[NAME]",
+        "[COMPANY]",
+        "[REFERENCE]",
+        "[DATE]",
+        "[EMAIL]",
+        "[SUPPORT]",
+        "[WORKSPACE]"
+      ]
+    },
+    {
+      "id": "invoice-en",
+      "batch": "invoice",
+      "lang": "en",
+      "tone": "formal",
+      "subject": "Question on invoice [REFERENCE]",
+      "body": "Hello [SUPPORT],\n\nI received invoice [REFERENCE] from [COMPANY] dated [DATE] for [AMOUNT] [CURRENCY]. Please explain this charge.\n\nThe related contract is [CONTRACT]. Please send a line-by-line breakdown and say whether the invoice still stands after the cancellation or change on [DATE]. If it does not stand, please cancel it in writing.\n\nReply to [EMAIL].\n\nKind regards,\n[NAME]\n",
+      "tokens": [
+        "[NAME]",
+        "[COMPANY]",
+        "[REFERENCE]",
+        "[DATE]",
+        "[EMAIL]",
+        "[SUPPORT]",
+        "[AMOUNT]",
+        "[CURRENCY]",
+        "[CONTRACT]"
+      ]
+    },
+    {
+      "id": "invoice-de",
+      "batch": "invoice",
+      "lang": "de",
+      "tone": "formal",
+      "subject": "Frage zur Rechnung [REFERENCE]",
+      "body": "Guten Tag [SUPPORT],\n\nich habe die Rechnung [REFERENCE] von [COMPANY] vom [DATE] ueber [AMOUNT] [CURRENCY] erhalten. Bitte erklaeren Sie diese Belastung.\n\nDer zugehoerige Vertrag ist [CONTRACT]. Bitte senden Sie eine Aufstellung je Position und sagen Sie, ob die Rechnung nach der Kuendigung oder Aenderung vom [DATE] bestehen bleibt. Falls nicht, stornieren Sie sie bitte schriftlich.\n\nAntwort an [EMAIL].\n\nMit freundlichen Gruessen\n[NAME]\n",
+      "tokens": [
+        "[NAME]",
+        "[COMPANY]",
+        "[REFERENCE]",
+        "[DATE]",
+        "[EMAIL]",
+        "[SUPPORT]",
+        "[AMOUNT]",
+        "[CURRENCY]",
+        "[CONTRACT]"
+      ]
+    },
+    {
+      "id": "invoice-multi",
+      "batch": "invoice",
+      "lang": "multi",
+      "tone": "formal",
+      "subject": "Invoice question / Frage zur Rechnung [REFERENCE]",
+      "body": "Hello [SUPPORT],\n\nEN: Invoice [REFERENCE] from [COMPANY], dated [DATE], is for [AMOUNT] [CURRENCY] on contract [CONTRACT]. Please send a line breakdown and say if it still stands after the [DATE] change. If not, cancel it in writing. Reply to [EMAIL].\n\nDE: Rechnung [REFERENCE] von [COMPANY] vom [DATE] ueber [AMOUNT] [CURRENCY] zum Vertrag [CONTRACT]. Bitte Positionen und ob sie nach der Aenderung vom [DATE] bestehen bleibt. Falls nicht, schriftlich stornieren. Antwort an [EMAIL].\n\nKind regards / Mit freundlichen Gruessen\n[NAME]\n",
+      "tokens": [
+        "[NAME]",
+        "[COMPANY]",
+        "[REFERENCE]",
+        "[DATE]",
+        "[EMAIL]",
+        "[SUPPORT]",
+        "[AMOUNT]",
+        "[CURRENCY]",
+        "[CONTRACT]"
+      ]
+    },
+    {
+      "id": "reschedule-en",
+      "batch": "reschedule",
+      "lang": "en",
+      "tone": "warm",
+      "subject": "Can we move [TOPIC] on [DATE]?",
+      "body": "Hello [NAME],\n\nI cannot keep our [TOPIC] appointment on [DATE] at [TIME]. Sorry for the short notice.\n\nI can do [OPTION 1] or [OPTION 2]. Please send whichever slot still works, or another time this week.\n\nThanks,\n[NAME]\n[EMAIL]\n",
+      "tokens": [
+        "[NAME]",
+        "[TOPIC]",
+        "[DATE]",
+        "[TIME]",
+        "[OPTION 1]",
+        "[OPTION 2]",
+        "[EMAIL]"
+      ]
+    },
+    {
+      "id": "reschedule-de",
+      "batch": "reschedule",
+      "lang": "de",
+      "tone": "warm",
+      "subject": "Koennen wir [TOPIC] am [DATE] verschieben?",
+      "body": "Guten Tag [NAME],\n\nich kann den Termin zu [TOPIC] am [DATE] um [TIME] nicht wahrnehmen. Entschuldigung fuer die kurze Frist.\n\nMir passen [OPTION 1] oder [OPTION 2]. Bitte nennen Sie den Slot, der noch frei ist, oder einen anderen Termin in dieser Woche.\n\nDanke\n[NAME]\n[EMAIL]\n",
+      "tokens": [
+        "[NAME]",
+        "[TOPIC]",
+        "[DATE]",
+        "[TIME]",
+        "[OPTION 1]",
+        "[OPTION 2]",
+        "[EMAIL]"
+      ]
+    },
+    {
+      "id": "reschedule-multi",
+      "batch": "reschedule",
+      "lang": "multi",
+      "tone": "warm",
+      "subject": "Move appointment / Termin verschieben: [TOPIC]",
+      "body": "Hello [NAME],\n\nEN: I cannot keep [TOPIC] on [DATE] at [TIME]. I can do [OPTION 1] or [OPTION 2]. Please pick one or suggest another time this week.\n\nDE: Den Termin zu [TOPIC] am [DATE] um [TIME] kann ich nicht halten. Es passen [OPTION 1] oder [OPTION 2]. Bitte einen Slot waehlen oder einen anderen Termin diese Woche nennen.\n\nThanks / Danke\n[NAME]\n[EMAIL]\n",
+      "tokens": [
+        "[NAME]",
+        "[TOPIC]",
+        "[DATE]",
+        "[TIME]",
+        "[OPTION 1]",
+        "[OPTION 2]",
+        "[EMAIL]"
+      ]
+    },
+    {
+      "id": "late-reply-en",
+      "batch": "late-reply",
+      "lang": "en",
+      "tone": "warm",
+      "subject": "Re: [TOPIC]",
+      "body": "Hello [NAME],\n\nSorry for the late reply on [TOPIC]. I had the message and did not answer in time.\n\nShort answer: [ANSWER].\nNext step from me: [NEXT STEP] by [DATE].\n\nPlease tell me if that still works.\n\nBest,\n[NAME]\n",
+      "tokens": [
+        "[NAME]",
+        "[TOPIC]",
+        "[ANSWER]",
+        "[NEXT STEP]",
+        "[DATE]"
+      ]
+    },
+    {
+      "id": "late-reply-de",
+      "batch": "late-reply",
+      "lang": "de",
+      "tone": "warm",
+      "subject": "Re: [TOPIC]",
+      "body": "Guten Tag [NAME],\n\nentschuldigung fuer die spaete Antwort zu [TOPIC]. Die Nachricht lag vor, ich habe nicht rechtzeitig geantwortet.\n\nKurz: [ANSWER].\nMein naechster Schritt: [NEXT STEP] bis [DATE].\n\nBitte sagen Sie, ob das noch passt.\n\nViele Gruesse\n[NAME]\n",
+      "tokens": [
+        "[NAME]",
+        "[TOPIC]",
+        "[ANSWER]",
+        "[NEXT STEP]",
+        "[DATE]"
+      ]
+    },
+    {
+      "id": "late-reply-multi",
+      "batch": "late-reply",
+      "lang": "multi",
+      "tone": "warm",
+      "subject": "Re: [TOPIC] — late reply / spaete Antwort",
+      "body": "Hello [NAME],\n\nEN: Sorry this is late. Answer: [ANSWER]. I will [NEXT STEP] by [DATE]. Please say if that still works.\n\nDE: Entschuldigung fuer die Verspaetung. Antwort: [ANSWER]. Ich mache [NEXT STEP] bis [DATE]. Bitte sagen, ob das noch passt.\n\nBest / Viele Gruesse\n[NAME]\n",
+      "tokens": [
+        "[NAME]",
+        "[TOPIC]",
+        "[ANSWER]",
+        "[NEXT STEP]",
+        "[DATE]"
+      ]
+    },
+    {
+      "id": "complaint-en",
+      "batch": "complaint",
+      "lang": "en",
+      "tone": "firm",
+      "subject": "Complaint: no reply on [REFERENCE]",
+      "body": "Hello [SUPPORT],\n\nI wrote to [COMPANY] on [DATE] about [REFERENCE] and have not received an answer. Please treat this message as a complaint.\n\nI need:\n1. A complaint reference.\n2. The deadline for your written response.\n3. The current status of [REFERENCE].\n4. The name of the team now handling it.\n\nPlease reply to [EMAIL].\n\nKind regards,\n[NAME]\n",
+      "tokens": [
+        "[NAME]",
+        "[COMPANY]",
+        "[REFERENCE]",
+        "[DATE]",
+        "[EMAIL]",
+        "[SUPPORT]"
+      ]
+    },
+    {
+      "id": "complaint-de",
+      "batch": "complaint",
+      "lang": "de",
+      "tone": "firm",
+      "subject": "Beschwerde: keine Antwort zu [REFERENCE]",
+      "body": "Guten Tag [SUPPORT],\n\nich habe [COMPANY] am [DATE] zu [REFERENCE] geschrieben und keine Antwort erhalten. Bitte behandeln Sie diese Nachricht als Beschwerde.\n\nIch brauche:\n1. ein Beschwerdeaktenzeichen,\n2. die Frist fuer Ihre schriftliche Antwort,\n3. den aktuellen Stand zu [REFERENCE],\n4. den Namen des zustaendigen Teams.\n\nBitte antworten Sie an [EMAIL].\n\nMit freundlichen Gruessen\n[NAME]\n",
+      "tokens": [
+        "[NAME]",
+        "[COMPANY]",
+        "[REFERENCE]",
+        "[DATE]",
+        "[EMAIL]",
+        "[SUPPORT]"
+      ]
+    },
+    {
+      "id": "complaint-multi",
+      "batch": "complaint",
+      "lang": "multi",
+      "tone": "firm",
+      "subject": "Complaint / Beschwerde: [REFERENCE]",
+      "body": "Hello [SUPPORT],\n\nEN: I wrote on [DATE] about [REFERENCE] and got no answer. Please open a complaint, send the reference, response deadline, current status, and the team name. Reply to [EMAIL].\n\nDE: Ich habe am [DATE] zu [REFERENCE] geschrieben und keine Antwort erhalten. Bitte Beschwerde eroeffnen und Aktenzeichen, Antwortfrist, Stand und Team nennen. Antwort an [EMAIL].\n\nKind regards / Mit freundlichen Gruessen\n[NAME]\n",
+      "tokens": [
+        "[NAME]",
+        "[COMPANY]",
+        "[REFERENCE]",
+        "[DATE]",
+        "[EMAIL]",
+        "[SUPPORT]"
+      ]
+    },
+    {
+      "id": "meeting-en",
+      "batch": "meeting",
+      "lang": "en",
+      "tone": "brief",
+      "subject": "Confirmed: [TOPIC] on [DATE]",
+      "body": "Hello [NAME],\n\nConfirmed. I will join [TOPIC] on [DATE] at [TIME], [CHANNEL].\n\nI will cover [POINT]. Please send the agenda or link if it is not already in this thread.\n\nThanks,\n[NAME]\n",
+      "tokens": [
+        "[NAME]",
+        "[TOPIC]",
+        "[DATE]",
+        "[TIME]",
+        "[CHANNEL]",
+        "[POINT]"
+      ]
+    },
+    {
+      "id": "meeting-de",
+      "batch": "meeting",
+      "lang": "de",
+      "tone": "brief",
+      "subject": "Bestaetigt: [TOPIC] am [DATE]",
+      "body": "Guten Tag [NAME],\n\nbestaetigt. Ich bin bei [TOPIC] am [DATE] um [TIME] dabei, [CHANNEL].\n\nIch bringe [POINT] mit. Bitte senden Sie die Agenda oder den Link, falls er noch nicht in diesem Verlauf steht.\n\nDanke\n[NAME]\n",
+      "tokens": [
+        "[NAME]",
+        "[TOPIC]",
+        "[DATE]",
+        "[TIME]",
+        "[CHANNEL]",
+        "[POINT]"
+      ]
+    },
+    {
+      "id": "meeting-multi",
+      "batch": "meeting",
+      "lang": "multi",
+      "tone": "brief",
+      "subject": "Confirmed / bestaetigt: [TOPIC] [DATE]",
+      "body": "Hello [NAME],\n\nEN: Confirmed for [TOPIC] on [DATE] at [TIME], [CHANNEL]. I will cover [POINT]. Please send the agenda or link if it is missing.\n\nDE: Bestaetigt fuer [TOPIC] am [DATE] um [TIME], [CHANNEL]. Ich bringe [POINT] mit. Bitte Agenda oder Link senden, falls sie fehlen.\n\nThanks / Danke\n[NAME]\n",
+      "tokens": [
+        "[NAME]",
+        "[TOPIC]",
+        "[DATE]",
+        "[TIME]",
+        "[CHANNEL]",
+        "[POINT]"
+      ]
+    },
+    {
+      "id": "reference-en",
+      "batch": "reference",
+      "lang": "en",
+      "tone": "warm",
+      "subject": "Could you give a short reference?",
+      "body": "Hello [NAME],\n\nI am applying for [ROLE] at [COMPANY] and hoped you could give a short reference from our work on [PROJECT].\n\nA few lines on what I did and how we worked together is enough. The deadline is [DATE]. If you would rather not, that is fine.\n\nThank you,\n[NAME]\n[EMAIL]\n",
+      "tokens": [
+        "[NAME]",
+        "[ROLE]",
+        "[COMPANY]",
+        "[PROJECT]",
+        "[DATE]",
+        "[EMAIL]"
+      ]
+    },
+    {
+      "id": "reference-de",
+      "batch": "reference",
+      "lang": "de",
+      "tone": "warm",
+      "subject": "Koennten Sie eine kurze Referenz geben?",
+      "body": "Guten Tag [NAME],\n\nich bewerbe mich auf [ROLE] bei [COMPANY] und wuerde mich ueber eine kurze Referenz aus unserer Arbeit an [PROJECT] freuen.\n\nEin paar Zeilen dazu, was ich gemacht habe und wie die Zusammenarbeit war, reichen. Frist ist [DATE]. Wenn Sie das nicht moechten, ist das in Ordnung.\n\nDanke\n[NAME]\n[EMAIL]\n",
+      "tokens": [
+        "[NAME]",
+        "[ROLE]",
+        "[COMPANY]",
+        "[PROJECT]",
+        "[DATE]",
+        "[EMAIL]"
+      ]
+    },
+    {
+      "id": "reference-multi",
+      "batch": "reference",
+      "lang": "multi",
+      "tone": "warm",
+      "subject": "Reference request / Referenzanfrage",
+      "body": "Hello [NAME],\n\nEN: I am applying for [ROLE] at [COMPANY]. Could you write a few lines on our work on [PROJECT]? Deadline [DATE]. No is fine.\n\nDE: Ich bewerbe mich auf [ROLE] bei [COMPANY]. Koennten Sie ein paar Zeilen zu [PROJECT] schreiben? Frist [DATE]. Ein Nein ist in Ordnung.\n\nThank you / Danke\n[NAME]\n[EMAIL]\n",
+      "tokens": [
+        "[NAME]",
+        "[ROLE]",
+        "[COMPANY]",
+        "[PROJECT]",
+        "[DATE]",
+        "[EMAIL]"
+      ]
+    },
+    {
+      "id": "repair-en",
+      "batch": "repair",
+      "lang": "en",
+      "tone": "formal",
+      "subject": "Repair needed at [UNIT]",
+      "body": "Hello [NAME],\n\nPlease arrange a repair at [UNIT]. The issue is [ISSUE], first noticed on [DATE].\n\nIt affects [IMPACT]. I can be there on [OPTION 1] or [OPTION 2]. Please confirm the visit window and who will attend.\n\nKind regards,\n[NAME]\n[EMAIL]\n",
+      "tokens": [
+        "[NAME]",
+        "[UNIT]",
+        "[ISSUE]",
+        "[DATE]",
+        "[IMPACT]",
+        "[OPTION 1]",
+        "[OPTION 2]",
+        "[EMAIL]"
+      ]
+    },
+    {
+      "id": "repair-de",
+      "batch": "repair",
+      "lang": "de",
+      "tone": "formal",
+      "subject": "Reparatur noetig in [UNIT]",
+      "body": "Guten Tag [NAME],\n\nbitte veranlassen Sie eine Reparatur in [UNIT]. Es geht um [ISSUE], zuerst bemerkt am [DATE].\n\nAuswirkung: [IMPACT]. Ich kann am [OPTION 1] oder [OPTION 2] da sein. Bitte bestaetigen Sie das Zeitfenster und wer kommt.\n\nMit freundlichen Gruessen\n[NAME]\n[EMAIL]\n",
+      "tokens": [
+        "[NAME]",
+        "[UNIT]",
+        "[ISSUE]",
+        "[DATE]",
+        "[IMPACT]",
+        "[OPTION 1]",
+        "[OPTION 2]",
+        "[EMAIL]"
+      ]
+    },
+    {
+      "id": "repair-multi",
+      "batch": "repair",
+      "lang": "multi",
+      "tone": "formal",
+      "subject": "Repair / Reparatur: [UNIT]",
+      "body": "Hello [NAME],\n\nEN: Please arrange a repair at [UNIT] for [ISSUE], noticed on [DATE]. Impact: [IMPACT]. I can be there [OPTION 1] or [OPTION 2]. Confirm the window and who attends.\n\nDE: Bitte Reparatur in [UNIT] wegen [ISSUE], bemerkt am [DATE]. Auswirkung: [IMPACT]. Ich kann [OPTION 1] oder [OPTION 2]. Bitte Zeitfenster und wer kommt bestaetigen.\n\nKind regards / Mit freundlichen Gruessen\n[NAME]\n[EMAIL]\n",
+      "tokens": [
+        "[NAME]",
+        "[UNIT]",
+        "[ISSUE]",
+        "[DATE]",
+        "[IMPACT]",
+        "[OPTION 1]",
+        "[OPTION 2]",
+        "[EMAIL]"
+      ]
+    }
+  ],
+  "count": 36
+}
