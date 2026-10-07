@@ -2,14 +2,16 @@
 
 <img src="./assets/readme-banner.svg" alt="e-mail-drafts-free" width="100%">
 
-# e-mail-drafts-free
+# Email drafts free
 
-Eigenes Repository. GitHub hat noch keine Beschreibung gesetzt.
-
-[![branch](https://img.shields.io/badge/branch-main-7EB8C9?style=flat-square)](https://github.com/Pierreg99/e-mail-drafts-free)
-[![sichtbarkeit](https://img.shields.io/badge/sichtbarkeit-öffentlich-141414?style=flat-square&labelColor=0A0A0A)](https://github.com/Pierreg99/e-mail-drafts-free)
-[![sprache](https://img.shields.io/badge/sprache-JavaScript-2A2A28?style=flat-square&labelColor=0A0A0A)](https://github.com/Pierreg99/e-mail-drafts-free)
-
+<p><strong>Anonymisierte E-Mail-Entwürfe für zwölf Alltagsfälle, jeweils auf Englisch, Deutsch und zweisprachig.</strong></p>
+<p>
+<img alt="JavaScript: 45%" src="https://img.shields.io/badge/JavaScript-45%25-F7DF1E?style=for-the-badge&logo=javascript&logoColor=white">
+<img alt="CSS: 28%" src="https://img.shields.io/badge/CSS-28%25-1572B6?style=for-the-badge&logo=css3&logoColor=white">
+<img alt="HTML: 27%" src="https://img.shields.io/badge/HTML-27%25-E34F26?style=for-the-badge&logo=html5&logoColor=white">
+<img alt="Sichtbarkeit: Öffentlich" src="https://img.shields.io/badge/Sichtbarkeit-%C3%96ffentlich-0B7285?style=for-the-badge">
+</p>
+<p><a href="#schnellstart">Schnellstart</a> · <a href="#projektstruktur">Projektstruktur</a> · <a href="#english-summary">English</a></p>
 </div>
 
 <table>
@@ -39,23 +41,88 @@ Der Default-Branch `main` ist die Fläche, die zählt. Was nicht in diesem Baum 
 </tr>
 </table>
 
-## Lesen
+---
 
-1. Default-Branch öffnen.
-2. Nur Dateien in diesem Baum als Beleg nehmen.
-3. Issues und Diskussionen nur nutzen, wenn sie im Repo eingeschaltet sind.
+## Inhaltsverzeichnis
 
-## Grenze
+- [Bestand und Fakten](#bestand)
+- [Überblick](#überblick)
+- [Features](#features)
+- [Schnellstart](#schnellstart)
+- [Architektur](#architektur)
+- [Projektstruktur](#projektstruktur)
+- [Dokumentation](#dokumentation)
+- [Projektdetails](#projektdetails)
+- [English summary](#english-summary)
 
-Keine Qualitätszahl, kein Paketstand und keine Runtime, die nicht als Datei in diesem Repo steht.
+## Überblick
 
-<p align="center"><sub>Fläche nach Cryo Core Lite v1.5 · Tokens #0A0A0A / #141414 / #7EB8C9</sub></p>
+Anonymisierte E-Mail-Entwürfe für zwölf Alltagsfälle, jeweils auf Englisch, Deutsch und zweisprachig.
 
+| Merkmal | Wert |
+| --- | --- |
+| Sprachen | JavaScript (45%), CSS (28%), HTML (27%) |
+| Dateien im Repository | 82 |
+| Einstiegspunkte | `index.html` |
 
-<details>
-<summary>Bisheriger README-Text</summary>
+## Features
 
-# Email drafts free
+- 40 Markdown-Dokumente
+
+## Schnellstart
+
+```bash
+git clone https://github.com/Pierreg99/e-mail-drafts-free.git
+cd e-mail-drafts-free
+```
+
+Das Projekt benötigt keinen Build-Schritt: `index.html` direkt im Browser öffnen.
+
+## Architektur
+
+Übersicht der wichtigsten Verzeichnisse nach Anzahl der enthaltenen Dateien.
+
+```mermaid
+flowchart LR
+    R(["e-mail-drafts-free"])
+    R --> D0["drafts/<br/>73 Dateien"]
+    R --> D1["docs/<br/>2 Dateien"]
+    R --> D2["assets/<br/>1 Datei"]
+    R --> D3["data/<br/>1 Datei"]
+    E{{"Einstieg: index.html"}}
+    E -.-> R
+```
+
+## Projektstruktur
+
+```text
+e-mail-drafts-free/
+├── assets/  (1 Datei)
+│   └── readme-banner.svg
+├── data/  (1 Datei)
+│   └── drafts.json
+├── docs/  (2 Dateien)
+│   ├── ANONYMIZATION.md
+│   └── COACHING.md
+├── drafts/  (73 Dateien)
+│   ├── md/
+│   ├── pdf/
+│   └── INDEX.md
+├── app.js
+├── index.html
+├── MANIFEST.json
+├── README.md
+└── styles.css
+```
+
+## Dokumentation
+
+- [docs/ANONYMIZATION.md](docs/ANONYMIZATION.md)
+- [docs/COACHING.md](docs/COACHING.md)
+
+## Projektdetails
+
+Der folgende Abschnitt übernimmt die bisherige Projektdokumentation.
 
 Anonymized draft batches for twelve ordinary use cases. Each batch has English, German, and a bilingual version.
 
@@ -71,4 +138,8 @@ Replace every `[TOKEN]` before sending. This repository contains no live mailbox
 Edition: CryoSys Enterprise v3. Factory mode: dense.
 Draft texts: `drafts/INDEX.md` (36 markdown files and matching text PDFs). Still anonymized.
 
-</details>
+## English summary
+
+Anonymized email draft batches for twelve everyday use cases in English, German and a bilingual version.
+
+Clone the repository and follow the commands in [Schnellstart](#schnellstart); the [project layout](#projektstruktur) shows where the code lives. Further documents are listed under [Dokumentation](#dokumentation).
