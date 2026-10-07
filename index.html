@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Email drafts free</title>
+  <meta name="description" content="Anonymized email draft batches in English, German, and bilingual form. Replace every token before sending.">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <h1>Email drafts free</h1>
+    <p class="lede">Twelve use-case batches. Each batch has English, German, and a bilingual draft. Nothing here is a real mailbox.</p>
+    <div class="banner">
+      <strong>Anonymized.</strong>
+      Replace every [TOKEN] before you send. Do not paste account numbers, IBANs, or private thread text into this public page.
+    </div>
+  </header>
+  <main>
+    <div class="controls">
+      <input id="q" type="search" placeholder="Search subject or body" aria-label="Search drafts">
+      <select id="lang" aria-label="Language">
+        <option value="all">All languages</option>
+        <option value="en">English</option>
+        <option value="de">Deutsch</option>
+        <option value="multi">Multilingual</option>
+      </select>
+      <select id="batch" aria-label="Use case">
+        <option value="all">All use cases</option>
+      </select>
+      <select id="tone" aria-label="Tone">
+        <option value="all">All tones</option>
+        <option value="formal">Formal</option>
+        <option value="firm">Firm</option>
+        <option value="brief">Brief</option>
+        <option value="warm">Warm</option>
+      </select>
+    </div>
+    <p class="note" id="count"></p>
+    <div class="grid" id="list"></div>
+  </main>
+  <footer>
+    <p>Static suite. Enable GitHub Pages on the main branch, root folder. Catalog: data/drafts.json.</p>
+  </footer>
+  <script src="app.js"></script>
+</body>
+</html>
