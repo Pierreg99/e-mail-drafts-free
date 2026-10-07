@@ -1,0 +1,13 @@
+{
+  "name": "e-mail-drafts-free",
+  "edition": "CryoSys Enterprise v3",
+  "factory_mode": "dense",
+  "quality_gate": {"Q": 0.9, "PIS": 0.82, "safe_mode": 2},
+  "anonymized": true,
+  "languages": ["en", "de", "multi"],
+  "batches": 12,
+  "drafts": 36,
+  "deploy": "static GitHub Pages from repository root",
+  "human_artifact": "index.html",
+  "internal_packet": ["MANIFEST.json", "docs/ANONYMIZATION.md", "docs/COACHING.md"]
+}
