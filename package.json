@@ -8,10 +8,11 @@
     "node": ">=20"
   },
   "scripts": {
-    "test": "node --test",
+    "test": "node --test test/catalog.test.mjs",
     "validate": "node scripts/validate-catalog.mjs",
     "check": "npm run validate && npm run validate:exports && npm run check:design && npm test",
     "check:design": "node scripts/check-design.mjs",
-    "validate:exports": "node scripts/validate-exports.mjs"
+    "validate:exports": "node scripts/validate-exports.mjs",
+    "test:browser": "node test/browser-smoke.mjs"
   }
 }
