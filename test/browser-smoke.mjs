@@ -19,7 +19,7 @@ try {
     page.on("pageerror", err => pageErrors.push(err.message));
     const response = await page.goto(baseURL, { waitUntil: "networkidle" });
     assert.equal(response?.status(), 200, name + ": HTTP status");
-    await page.locator("#total-count").getByText("36").waitFor();
+    await page.waitForFunction(() => document.querySelector("#total-count")?.textContent === "36");
     assert.equal((await page.locator(".draft-item").count()), 36);
     assert.equal(await page.locator("#batch-count").textContent(), "12");
     assert.equal(await page.locator("#editor-content").isVisible(), true);
@@ -41,6 +41,7 @@ try {
     await page.locator("#reset-draft").click();
     assert.equal(await page.locator("#copy-ready").isDisabled(), true);
     await page.locator("#copy-template").click();
+    await page.waitForFunction(() => Boolean(document.querySelector("#copy-status")?.textContent));
     const status = await page.locator("#copy-status").textContent();
     assert.ok(status.includes("Vorlage kopiert") || status.includes("Kopieren nicht möglich"), name + ": copy feedback missing");
 
