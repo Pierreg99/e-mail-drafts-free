@@ -2,9 +2,13 @@
   "name": "e-mail-drafts-free",
   "product": "CryoPG Draft Studio",
   "version": "1.1.0",
-  "status": "feature-branch-under-review",
+  "status": "merged-codebase-with-follow-up-CI-fix",
   "runtime": "static HTML, CSS and JavaScript modules",
-  "languages": ["en", "de", "multi"],
+  "languages": [
+    "en",
+    "de",
+    "multi"
+  ],
   "batches": 12,
   "drafts": 36,
   "anonymized_catalog": true,
@@ -13,12 +17,19 @@
   "api_key_required": false,
   "browser_edit_persistence": false,
   "quality_gates": {
-    "catalog_validation": "implemented; CI result pending",
-    "unit_tests": "implemented; CI result pending",
-    "desktop_browser": "not yet evidenced",
-    "mobile_browser": "not yet evidenced",
-    "security_review": "pending"
+    "catalog_validation": "passed in original quality job; new PR verification pending",
+    "markdown_exports": "36/36 text match passed in original quality job",
+    "pdf_exports": "36/36 structure valid; text equivalence not yet verified",
+    "unit_tests": "6/6 passed; overall original job failed because browser test was auto-discovered",
+    "desktop_chromium": "passed on merged PR #2 head at 1440x900",
+    "mobile_chromium_viewports": "passed at 390x844 and 360x800; not physical mobile devices",
+    "security_review": "not completed",
+    "legal_content_review": "not completed"
   },
   "canonical_catalog": "data/drafts.json",
-  "evidence": "docs/QUALITY.md"
+  "evidence": "docs/QUALITY.md",
+  "evidence_runs": {
+    "browser": "https://github.com/Pierreg99/e-mail-drafts-free/actions/runs/42337934431",
+    "quality_previous_failed": "https://github.com/Pierreg99/e-mail-drafts-free/actions/runs/42337934380"
+  }
 }

@@ -8,13 +8,19 @@
 
 [App (Quellcode)](./index.html) · [Vorlagenkatalog](./drafts/INDEX.md) · [Datenschutzgrenzen](./docs/ANONYMIZATION.md) · [Qualitätsnachweise](./docs/QUALITY.md) · [Roadmap](./docs/ROADMAP.md)
 
+[![Quality CI](https://github.com/Pierreg99/e-mail-drafts-free/actions/workflows/quality.yml/badge.svg)](https://github.com/Pierreg99/e-mail-drafts-free/actions/workflows/quality.yml)
+[![Browser Smoke](https://github.com/Pierreg99/e-mail-drafts-free/actions/workflows/browser-smoke.yml/badge.svg)](https://github.com/Pierreg99/e-mail-drafts-free/actions/workflows/browser-smoke.yml)
+[![Source](https://img.shields.io/badge/Code-Repository-69E9F4?style=for-the-badge&logo=github)](https://github.com/Pierreg99/e-mail-drafts-free)
+[![Evidence](https://img.shields.io/badge/QA-Evidence_Audit-A6A8FF?style=for-the-badge)](./docs/QUALITY.md)
+[![Contribute](https://img.shields.io/badge/Workflow-Contribute-FF8BBB?style=for-the-badge)](./CONTRIBUTING.md)
+
 ![Node.js](https://img.shields.io/badge/Node.js-%E2%89%A520-69E9F4?style=flat-square)
 ![Dependencies](https://img.shields.io/badge/Runtime_dependencies-0-A6A8FF?style=flat-square)
 ![Deployment](https://img.shields.io/badge/Hosting-static-FF8BBB?style=flat-square)
 
 </div>
 
-> **Status: Entwicklung im Feature-Branch.** Die Funktionen sind im Quellcode implementiert; ein erfolgreicher CI-Lauf, Browserabnahme und echte Screenshots müssen separat nachgewiesen werden. Dieses Repository ist **kein** E-Mail-Dienst, keine KI-Integration und keine rechtsverbindliche Beratung.
+> **Status 07.11.2026:** Die Workbench wurde über [PR #2](https://github.com/Pierreg99/e-mail-drafts-free/pull/2) in `main` gemergt. Der Chromium-Smoke-Test ist nachweislich erfolgreich; der ursprüngliche Quality-Job ist wegen eines Test-Discovery-Konfigurationsfehlers **rot**. Ein separater Fix-PR behebt den Blocker. Keine Freigabe für rechtliche Richtigkeit, Sicherheitszertifizierung oder einen SaaS-Launch.
 
 ## ✦ Was du bekommst / What you get
 
@@ -47,7 +53,7 @@ python3 -m http.server 8000
 npm run check
 ```
 
-Das führt Katalogprüfung, Design-/Linkprüfung und Node.js-Tests aus – ohne Runtime-Abhängigkeiten. Die Browserabnahme bleibt ein eigener Nachweisschritt.
+Das führt Katalogprüfung, 36 Markdown- und PDF-Strukturprüfungen, Design-/Linkprüfung und **nur die isolierten Node.js-Unit-Tests** aus – ohne Runtime-Abhängigkeiten. Für Playwright-Browsertests ist ein eigener Workflow vorgesehen. Die Original-CI war rot; den Korrekturstand im aktuellen PR prüfen.
 
 **GitHub Pages:** Optional kann nach dem Review unter *Settings → Pages* die Veröffentlichung aus dem Branch `main` mit Ordner `/ (root)` eingeschaltet werden. Diese Konfiguration wird nicht durch das Repository automatisch aktiviert.
 
@@ -56,7 +62,7 @@ Das führt Katalogprüfung, Design-/Linkprüfung und Node.js-Tests aus – ohne 
 1. **Vorlage suchen:** Sprache (DE / EN / MULTI), Thema und Ton auswählen.
 2. **Entwurf bearbeiten:** Betreff und Nachricht prüfen und anpassen.
 3. **Platzhalter kontrollieren:** Alle `[NAME]`, `[DATE]`, `[END DATE]` usw. entfernen bzw. ersetzen.
-4. **Kopieren:** `Text ohne Platzhalter kopieren` ist erst nach der technischen Platzhalterprüfung aktiv; `Vorlage kopieren` kopiert bewusst das anonymisierte Original.
+4. **Kopieren:** `Geprüften Text kopieren` ist erst nach der technischen Platzhalterprüfung aktiv; `Vorlage kopieren` kopiert bewusst das anonymisierte Original.
 5. **Extern prüfen und senden:** Inhalt, Adressat und Anhänge im eigenen Mailprogramm prüfen. Die Website hat **keine Senden-Funktion**.
 
 **English:** Filter a template, edit subject and body, replace every placeholder, then copy it into your own mail client. Never treat placeholder validation as factual or legal verification.
@@ -112,7 +118,7 @@ flowchart LR
 
 ## ✧ Nachweise statt Marketingbehauptungen
 
-Eine Datei ist ein **Implementierungsnachweis**, kein bestandener Browsertest. Screenshots werden erst nach einem tatsächlichen Desktop-/Mobiltest eingebunden. **Keine simulierten Screenshots, keine erfundenen Coverage-/Sicherheits-Scores.** Siehe [Qualität](./docs/QUALITY.md) und [Screenshot-Prozess](./docs/SCREENSHOTS.md).
+Die [echten Chromium-Screenshots aus dem erfolgreichen Browser-Testlauf](https://github.com/Pierreg99/e-mail-drafts-free/actions/runs/42337934431) wurden als zeitlich begrenztes GitHub-Actions-Artefakt gespeichert, **nicht** als Bilddateien in dieser README eingebettet. Tests bei 360 und 390 px sind simulierte Browser-Viewports, keine realen Handys. Der [ursprüngliche Quality-Job](https://github.com/Pierreg99/e-mail-drafts-free/actions/runs/42337934380) war rot. **Keine erfundenen Coverage-, Sicherheits- oder Qualitätswerte.** Siehe [Qualität](./docs/QUALITY.md) und [Screenshots](./docs/SCREENSHOTS.md).
 
 **Lizenz:** Bitte vor Weitergabe oder kommerzieller Nachnutzung den Lizenzstatus im Repository prüfen; diese README behauptet keine Open-Source-Lizenz, solange keine gültige `LICENSE`-Datei verifiziert wurde.
 

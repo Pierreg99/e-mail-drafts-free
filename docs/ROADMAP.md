@@ -1,34 +1,30 @@
-# Roadmap / Überprüfbare Meilensteine
+# CryoPG Draft Studio – Evidence Roadmap
 
-| Phase | Umfang | Evidenzkriterium | Status |
-| --- | --- | --- | --- |
-| Discovery | Bestandsaufnahme: 36 Vorlagen, 12 Themen, 3 Sprachen; Sicherheitsgrenzen | Quell-Dateien gelesen | Erledigt |
-| Design | CryoPG-Tokens, responsive Workbench, mobile Layouts | HTML + CSS in Feature-Branch | Implementiert |
-| Implementation | Katalog, Filter, Bearbeitung, Token-Gate, Originalkopie | `app.js` + `src/catalog.mjs` | Implementiert |
-| Validation | Katalog- und Unit-Tests, statische Design-Prüfung | grüner CI-Lauf am PR-Head | Ausstehend bis CI-Nachweis |
-| Browser pilot | Desktop, Android/iOS, Tastatur, Zwischenablage | Protokoll und Screenshots | Ausstehend |
-| Content review | Kritische Texte und Exportkonsistenz | Review der 36 Vorlagen & PDF-/MD-Exportpfade | Ausstehend |
-| Release | Review, Squash-Merge, optional Pages | Merge und produktive Abnahme | Nicht freigegeben |
+| Phase | Status (7.11.2026) | Nachweis / nächster Gate |
+| --- | --- | --- |
+| Discovery | Abgeschlossen | 12 Themen, 36 Vorlagen, 3 Sprachfassungen |
+| UI/UX Design | Implementiert und gemergt | `index.html`, `styles.css` |
+| Editor und Datensicherheit | Implementiert | `app.js`, `src/catalog.mjs`, manuelle Auditpflicht |
+| Katalog & Export | Automatisierter Abgleich bestanden | 36 Markdown-Exports passen zu JSON; PDF-Struktur valide |
+| Desktop-/Mobile Chromium-Smoke | Bestanden | [Test-Run](https://github.com/Pierreg99/e-mail-drafts-free/actions/runs/42337934431); 3 Viewports |
+| Quality CI | Blockiert im ursprünglichen Merge | Playwright-Import in Node-Test-Discovery; Fix-Branch erstellt |
+| Reale Geräte / Accessibility | Offen | Android + iOS + Screenreader + Kontrast |
+| Content/Legal Review | Offen | Fakten-/Rechtsprüfung der Vorlagen |
+| Public SaaS/Release | Nicht vorwegnehmen | Keine Backend-/Mailbox-Integration, keine Produktfreigabe |
 
-## Priorität P0 / Vor einem Release
+## Konkreter nächster Meilenstein
 
-1. CI-Status der aktuellen Branch-Spitze einsehen und Probleme beheben.
-2. Echte Desktop- und mobile Browserabnahmen inkl. Kopierfehlerfall durchführen.
-3. Bestehende Markdown-/PDF-Artefakte gegen `data/drafts.json` vergleichen.
-4. Sicherheit/Korrektheit kritischer Formulierungen fachlich prüfen; keine Rechtsgarantien.
-5. README, Screenshots und Lizenzstatus vor dem Merge überprüfen.
+- Quality-Gate-Fix als **separaten PR** prüfen und erfolgreich ausführen.
+- Sicherstellen, dass Browser-Smoke unabhängig von Unit-Tests läuft.
+- Bestehende Artefakte zeitnah sichern, sofern Bilder dauerhaft in README eingebunden werden sollen.
+- 36 PDF-Textinhalte mit JSON verifizieren, nicht bloß Header/EOF.
+- Browserabnahmen auf echter Hardware sowie fachliche Freigabe dokumentieren.
 
-## Priorität P1 / Nützliche, aber nicht versprochene Funktionen
+## P1 und P2 – nur Vorschläge
 
-- Optionaler, **nur lokal** bereitgestellter JSON-Export eigener Texte (mit Privatsphäre-Hinweis).
-- Sprachumschalter für die Bedienoberfläche (die Vorlagen sind bereits EN/DE/MULTI).
-- Visuell nachvollziehbarer Theme-Switcher mit getesteten Kontrastwerten.
-- Besseres Screenreader-Review und automatisierte Browser-Smoke-Tests.
+- Mehrsprachige Oberflächentexte (derzeit sind vor allem die Vorlagen EN/DE/MULTI).
+- Sprach- und Faktenreview pro Kategorie mit referenzierten Belegen.
+- Explizite Tests zu Clipboard-Rechten und Accessibility mit Playwright.
+- Optionaler Offline-Export nach bewusster Nutzeraktion, ohne Server-Persistenz.
 
-## Nicht im Scope
-
-- Auto-Send, API-Key-Speicherung, Browser-basierte Gmail-Synchronisierung oder ungeprüfte KI-Zusammenfassungen.
-- Backend, SaaS-Abrechnung, Account-System, Tracking.
-- Ohne Nachweis behauptete Qualitäts-Scores, Sicherheitszertifikate und Integrationen.
-
-Statusangaben dürfen erst anhand **konkreter** CI-Runs, Tests oder Dateiartefakte auf „bestanden“ gesetzt werden.
+Keine Release-, Sicherheits- oder Qualitätsbehauptung ohne konkrete Nachweise.

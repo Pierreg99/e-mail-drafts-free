@@ -1,48 +1,49 @@
-# Quality and evidence / Qualität und Nachweise
+# Qualitätsmatrix / Quality and evidence
 
-**Stand:** Implementierung auf `feat/cryo-drafts-workbench-20261107`. Hier werden keine CI-Erfolge oder Browser-Screenshots ohne tatsächlichen Nachweis behauptet.
+**Belegstand: 7. November 2026.** Die erste CryoPG-Workbench wurde mit [PR #2](https://github.com/Pierreg99/e-mail-drafts-free/pull/2) in `main` gemergt. Dabei wurde ein roter Quality-Check nicht verhindert. Die Korrektur befindet sich deshalb in einem separaten Review-Branch; **kein weiterer Merge ohne grünen PR-Check**.
 
-## Evidence-Matrix
+## Nachweise am gemergten Feature-Head
 
-| Prüfung | Was sie nachweist | Stand | Nachweis |
-| --- | --- | --- | --- |
-| Source review | Dateien und Verhalten sind im Feature-Branch vorhanden | Implementiert, manuell sichtbar | `index.html`, `app.js`, `styles.css` |
-| Katalogstruktur | Eindeutige IDs, 12 Themen, 36 Entwürfe und 3 Varianten/Thema | Test implementiert; CI ausstehend | `scripts/validate-catalog.mjs` |
-| Token-Metadaten | `tokens[]` stimmt mit Betreff und Nachricht überein | 10 Inkonsistenzen korrigiert; CI ausstehend | `data/drafts.json`, `src/catalog.mjs` |
-| Filter und Readiness | Basisfunktionen und Negativfälle | Tests implementiert; CI ausstehend | `test/catalog.test.mjs` |
-| Design / Links | DOM-IDs, CSP, lokale README-Links, responsive CSS, kein innerHTML | statischer Test implementiert; CI ausstehend | `scripts/check-design.mjs` |
-| Sicherheit | Kein autorisierter E-Mail-Versand, kein API-Key-Formular, keine Text-Persistenz im App-Code | Architekturprüfung; externes Audit offen | `app.js`, `docs/ANONYMIZATION.md` |
-| Browser Desktop | Chrome/Firefox/Edge: Katalog, Filter, Edit, Copy, Keyboard | Noch nicht belegt | `docs/SCREENSHOTS.md` |
-| Browser Mobile | 360 / 390 / 768 px, Chrome Android, Safari iOS | Noch nicht belegt | `docs/SCREENSHOTS.md` |
-| Export-Gleichheit | 36 Markdown- und 36 PDF-Artefakte vs. JSON | Noch nicht vollständig belegt | `drafts/INDEX.md` |
-| Rechtliche/faktische Richtigkeit | Texte auf jeweilige Situation und aktuelle Gesetzeslage prüfen | Nur durch Menschen/fachkundige Prüfung | Kein Automatik-Gate |
+| Nachweis | Verifizierter Status | Quelle / Grenze |
+| --- | --- | --- |
+| Katalog: 12 Batches, 36 Vorlagen | **Bestanden** innerhalb des Quality-Jobs | [Quality-Lauf #43](https://github.com/Pierreg99/e-mail-drafts-free/actions/runs/42337934380), vor dem fehlerhaften Unit-Test-Schritt |
+| Exportabgleich: 36 Markdown | **Bestanden**; Betreff, Body und Tokenlisten gegen JSON | `scripts/validate-exports.mjs`, Quality-Job-Log |
+| 36 PDF-Dateien | **Strukturprüfung bestanden** (Datei, Header und EOF) | Keine PDF-Inhaltsgleichheit garantiert |
+| Design- und relative Links | **Bestanden** im Quality-Job | `scripts/check-design.mjs`; 16 lokale Referenzen |
+| Reine Node-Unit-Tests | **6/6 bestanden**, aber Job gesamt rot | Automatischer `node --test`-Fund von `test/browser-smoke.mjs` ohne Playwright |
+| Quality-Workflow gesamt | **Fehlgeschlagen** | [Originaler Quality-Lauf](https://github.com/Pierreg99/e-mail-drafts-free/actions/runs/42337934380) |
+| Chromium Desktop/Mobil-Viewport | **Bestanden**: 1440×900, 390×844, 360×800 | [Browser-Smoke-Lauf](https://github.com/Pierreg99/e-mail-drafts-free/actions/runs/42337934431) |
+| Browser-Screenshots | **Erstellt als temporäres GitHub-Actions-Artefakt** | `actual-browser-screenshots`, Ablauf 14.11.2026; nicht in Git getrackt |
+| Chrome Android / Safari iOS auf echter Hardware | **Offen** | Chromium-Viewport ist kein physisches Gerät |
+| Screenreader / WCAG-Audit | **Offen** | Statische Checks sind kein Accessibility-Audit |
+| Rechtliche, faktische und sprachliche Freigabe | **Offen** | Vorlagen erfordern menschliche Prüfung |
+| Penetrationstest / Security-Audit | **Offen** | CSP und keine Mailbox-Verbindung ersetzen keinen Audit |
 
-## Lokale Prüfung
+## Korrektur des Quality-Blockers
+
+Ursache: Node.js startet über `node --test` **alle** passenden Dateien im `test/`-Verzeichnis. Der Browser-Smoke-Test importiert Playwright, das nur im separaten Browser-Job installiert wird. Daher wurde der Quality-Job nach sechs bestandenen Unit-Tests mit `ERR_MODULE_NOT_FOUND: playwright` abgebrochen.
+
+Korrektur: `npm test` führt ausschließlich `node --test test/catalog.test.mjs` aus. `npm run test:browser` bleibt separat und benötigt zuvor installierte Playwright-Abhängigkeiten samt Chromium.
 
 ```bash
-npm run check
+npm run check             # catalogue + exports + static design + unit tests
+npm run test:browser      # separate browser suite; install playwright/chromium first
 ```
 
-Dieser Befehl führt `validate`, `check:design` und `node --test` aus. Er belegt keine Ende-zu-Ende-Tests in realen Browsern.
+**Wichtig:** Die erfolgreiche Durchführung des neuen Quality-Jobs muss am **neuen Korrektur-PR-Head** erneut belegt werden. Der vorherige rote Lauf wird nicht rückwirkend grün.
 
-## Release-Gates (für Merge)
+## Vor einem öffentlichen Release
 
-- [ ] CI erfolgreich auf dem aktuellen PR-Head (nicht nur auf einem alten Commit)
-- [ ] Desktop: Suche, Sprache, Ton, Thema, Editor, Zurücksetzen, Kopieren getestet
-- [ ] Mobil: 360px/390px ohne horizontales Überlaufen oder verdeckte Buttons
-- [ ] Tastatur: Tab-Reihenfolge, Fokus, Screenreader-Ansagen überprüft
-- [ ] Kopieren: erlaubter und verweigerter Clipboard-Zugriff getestet
-- [ ] Vorlagen: mindestens kritische Beispiele für Konto, Rechnung, Beschwerde rechtlich und sprachlich geprüft
-- [ ] JSON/Markdown/PDF-Exportkonsistenz geprüft oder Abweichungen veröffentlicht
-- [ ] Zwei echte Screenshots dokumentiert (Desktop und Mobil)
-- [ ] Keine persönlichen Daten, Tokens oder Mailbox-Inhalte in PR und Screenshots
-- [ ] Lizenzstatus geklärt, bevor Dritten Nutzungsrechte behauptet werden
+- [ ] Quality CI auf dem neuen Korrektur-PR-Head grün
+- [x] Chromium-Desktop- und Mobil-Viewport-Smoke-Test mit echtem Screenshot-Artefakt
+- [x] JSON↔Markdown für 36 Vorlagen; 36 PDF-Strukturprüfungen
+- [ ] PDF-Inhaltstexte 1:1 mit JSON abgleichen
+- [ ] Echte Android-/iOS-Geräte testen und Ergebnisse dokumentieren
+- [ ] Screenreader, Tastatur, Farbkontrast und Kopierfehlerfall manuell prüfen
+- [ ] Kritische Texte und rechtlich relevante Behauptungen fachlich prüfen
+- [ ] Lizenzstatus eindeutig festlegen
+- [ ] Screenshot-Artefakte dauerhaft ablegen, falls gewünscht
 
-## Risiken und Einschränkungen
+## Grenzen der Validierung
 
-1. Ein ersetzter Platzhalter garantiert weder korrekte Inhalte noch eine passende Tonalität.
-2. Statische Hosting-Logs können Metadaten zum Seitenaufruf enthalten. Der Anwendungscode übermittelt keine eingegebenen Texte.
-3. Die statische CSP ist eine zusätzliche Hürde, kein vollständiges Security-Audit.
-4. Eine lokal gespeicherte HTML-Kopie unter `file://` kann Fetch blockieren; verwende einen HTTP-Server.
-5. Browser-Erweiterungen und das Betriebssystem sind außerhalb der Prüfbarkeit dieses Repos.
-6. Die Bestands-PDFs sind Dokumentexporte, nicht automatisch an den kanonischen JSON-Katalog gekoppelt.
+Platzhalterfreiheit bedeutet keine Faktensicherheit. Hosting-Anbieter und Browser-Erweiterungen können technische Informationen verarbeiten. Ein Chromium-Screenshot beweist Rendering, nicht gesetzeskonforme Inhalte. Keine automatisch gespeicherten oder versendeten E-Mails werden durch den Anwendungscode implementiert.

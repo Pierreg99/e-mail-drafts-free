@@ -1,29 +1,38 @@
 # Echte Screenshots / Real browser evidence
 
-**Keine Mockups als Testbelege ausgeben.** Der SVG-Header in `assets/readme-banner.svg` ist eine Illustration, **kein Screenshot**.
+## Verifizierter Workflow-Beleg vom 07.11.2026
 
-## Verfahren / Procedure
+Der [Browser-Smoke-Workflow](https://github.com/Pierreg99/e-mail-drafts-free/actions/runs/42337934431) wurde auf dem Feature-Commit `e20121152c3c3643504e6ec46b469e5b4ac31cc0` **erfolgreich** abgeschlossen.
 
-1. Lokalen HTTP-Server starten: `python3 -m http.server 8000`.
-2. Unter `http://localhost:8000` prüfen, dass 36 Vorlagen geladen werden.
-3. Browserkonsole auf Fehler kontrollieren. Suche und alle Filter durchspielen.
-4. Auf Desktop mit Tastatur: Tab-Reihenfolge, Fokus, Auswahl, Editor, Zurücksetzen, Originalkopie testen.
-5. Bearbeiteten Text mit offenen Tokens prüfen – der entsprechende Kopierbutton muss deaktiviert sein.
-6. Tokens im Betreff und Nachricht komplett ersetzen, dann den kopierten Text *außerhalb* des Editors kontrollieren.
-7. Zwischenablage verweigern/unsicheren Kontext simulieren und Statusmeldung prüfen.
-8. Mobil in echten Browsern oder emuliert auf 360×800 und 390×844 sowie Tablet 768×1024 kontrollieren. Echte Geräteprüfungen separat kennzeichnen.
-9. Screenshots ohne persönliche Inhalte erstellen, zum Beispiel:
-   - `assets/screenshots/desktop-library.png` (Desktop, vollständige Library + Editor)
-   - `assets/screenshots/mobile-editor.png` (Mobil, editierter Beispielentwurf)
-10. Bilddateien erst nach der Aufnahme committen. Danach in die README einbinden mit korrektem Stand und Testdatum.
+Dabei entstand das GitHub-Actions-Artefakt **`actual-browser-screenshots`** (Artifact-ID `13560083172`). Es enthält echte Playwright/Chromium-Screenshots. Die Dateien sind in GitHub Actions erreichbar; sie wurden **nicht** in das Repository übernommen. Das Artefakt läuft laut GitHub am **14. November 2026** ab.
 
-## Nachweisprotokoll
+| Browser-Test | Viewport | Ergebnis | Art |
+| --- | --- | --- | --- |
+| Chromium Desktop | 1440 × 900 | Bestanden | Playwright, tatsächlicher Browser |
+| Chromium mobiler Viewport | 390 × 844 | Bestanden | Simulierte mobile Größe, kein Android-Gerät |
+| Chromium kleiner mobiler Viewport | 360 × 800 | Bestanden | Simulierte mobile Größe, kein iPhone |
 
-| Gerät/Browser | Viewport | Datum | Commit | Ergebnis | Screenshot |
-| --- | --- | --- | --- | --- | --- |
-| Desktop / noch nicht geprüft | — | — | — | Offen | — |
-| Mobil / noch nicht geprüft | — | — | — | Offen | — |
+**Wichtig:** Der SVG-Header `assets/readme-banner.svg` ist ein Design-Vektorbild, kein Screenshot und kein Funktionsbeleg. Im README dürfen nur tatsächlich vorhandene, überprüfte Bildpfade verlinkt werden.
 
-## Grenzen
+## Reproduzieren / Reproduce
 
-Ein Chromium-Emulator ist **kein** Beweis für Safari iOS oder Chrome auf physischer Hardware. Screenshots beweisen visuelles Rendering, nicht Funktions-, Sicherheits- oder Barrierefreiheitstests.
+```bash
+python3 -m http.server 8000
+npm install --no-save --package-lock=false playwright@1.56.1
+npx playwright install chromium
+npm run test:browser
+```
+
+Für CI unter Ubuntu nutzt `.github/workflows/browser-smoke.yml` zusätzlich `npx playwright install --with-deps chromium`.
+
+Die Testdatei `test/browser-smoke.mjs` kontrolliert unter anderem 36 geladene Entwürfe, Filter, Bearbeitungs- und Reset-Status, Kopier-Feedback, fehlende horizontale Überläufe und JavaScript-Fehler. Sie erfasst echte Screenshots als `artifacts/desktop-library.png`, `artifacts/mobile-editor.png` und `artifacts/mobile-small.png`.
+
+## Weiter erforderliche manuelle Abnahme
+
+1. Chrome Android und Safari iOS auf **echten Geräten**, nicht nur in Chromium-Viewport-Simulation.
+2. Tastaturnavigation, Screenreader, Fokus und Kontrast.
+3. Zwischenablage im verweigerten Kontext.
+4. Sachlich und rechtlich vollständige Kontrolle der kritischen E-Mail-Texte.
+5. Screenshots ohne private Daten dauerhaft committen, wenn Veröffentlichungsfreigabe vorliegt.
+
+Screenshots beweisen nur die sichtbare Anwendung in ihrer Testkonfiguration; sie beweisen weder Sicherheitszertifizierung noch vollständige Funktionalität.
