@@ -1,26 +1,33 @@
-# Anonymization policy
+# Anonymisierung und Datenschutzgrenze / Privacy boundary
 
-Edition: CryoSys Enterprise v3
-Factory mode: dense
-SafeMode: Level 2
+Dieses öffentliche Repository verteilt **Vorlagen**, keine Nachrichten aus echten Postfächern. Im Katalog sollen keine echten Personen, Identifikatoren oder vertraulichen Kommunikationsinhalte stehen.
 
-This catalog is a free, public template library. It must stay free of real identities.
+## Verboten im Repository / Never commit
 
-## Never include
+- Echte Namen, E-Mail-Adressen, Kontaktlisten oder private Mail-Threads
+- Konto-, Vertrags-, Kunden-, Fall- oder Rechnungsnummern
+- IBAN, BIC, Karten-, Wallet- und Zahlungsdaten
+- Anschriften, medizinische Details, Gerätekennungen oder Zugangsdaten
+- API-Schlüssel, Zugangstokens, Cookies, Passwörter, authentische Mail-Screenshots
 
-- Real personal names, handles, or email addresses
-- Account, contract, customer, wallet, or invoice numbers from a live mailbox
-- IBANs, BICs, card numbers, or device identifiers
-- Street addresses, housing-office file numbers, or police reference numbers
-- Screenshots or quoted private mail
+## Erlaubte Platzhalter / Allowed placeholders
 
-## Always use
+- Rollen: `[NAME]`, `[COMPANY]`, `[SUPPORT]`
+- Vorgänge: `[REFERENCE]`, `[ACCOUNT]`, `[CONTRACT]`
+- Daten: `[DATE]`, `[END DATE]`, `[AMOUNT]`, `[CURRENCY]`
+- Nur leere Zahlungsfelder: `[IBAN]`, `[BIC]`, `[BANK]`
 
-- Role labels: [NAME], [COMPANY], [SUPPORT]
-- Case labels: [REFERENCE], [ACCOUNT], [CONTRACT]
-- Money and dates: [AMOUNT], [CURRENCY], [DATE]
-- Payout fields only as empty tokens: [IBAN], [BIC], [BANK]
+## Was die Anwendung macht / Runtime behavior
 
-## Review before send
+Die statische Seite lädt den öffentlichen Katalog `data/drafts.json` vom selben Webserver und verarbeitet Bearbeitungen **nur im Arbeitsspeicher des Browsers**. Sie hat keine Speicher-, Konto-, API-, Analyse- oder Versandfunktion im Anwendungscode. Der Browser und der Hosting-Dienst können unabhängig davon technische Abrufdaten verarbeiten; Endgeräte und Browser-Erweiterungen liegen außerhalb der Kontrolle des Projekts.
 
-Replace every token. Do not send a draft that still contains square brackets.
+**Wichtig:** Ergänze vertrauliche Informationen möglichst erst im eigenen Mailprogramm. Verlasse dich nicht auf ein öffentliches Webangebot als sicheren Tresor.
+
+## Vor Versand / Before sending
+
+1. Platzhalter und leere Felder beheben.
+2. Sachangaben, Beträge, Fristen, rechtliche Formulierungen und Empfänger prüfen.
+3. Im eigenen E-Mail-Programm versenden – nicht aus dieser Anwendung.
+4. Keine realen Fälle/Schlüssel in Issues, Pull Requests oder Screenshots posten.
+
+Eine grüne technische Platzhalterprüfung ist **keine** Inhalts-, Sicherheits- oder Rechtsfreigabe.
