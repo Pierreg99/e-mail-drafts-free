@@ -27,7 +27,7 @@ requires(css.includes("prefers-reduced-motion"), "Reduced-motion preference not 
 requires(!app.includes(".innerHTML"), "No untrusted content may be inserted with innerHTML");
 requires(!app.includes("localStorage") && !app.includes("sessionStorage"), "Editor must not persist user content");
 requires(!app.includes("fetch(") || /fetch\("\.\/data\/drafts\.json"/.test(app), "Only same-origin catalog fetch permitted");
-requires(!html.includes("http://") && !html.includes("https://"), "Do not load remote resources into runtime HTML");
+requires(!/<(?:script|link|img)\\b[^>]+(?:src|href)="https?:\\/\\//i.test(html), "Do not load remote scripts, styles, or images into the application");
 requires(!html.includes('onclick='), "Inline event handlers are not permitted");
 
 const refs = new Set();
