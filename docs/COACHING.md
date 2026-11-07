@@ -1,26 +1,42 @@
-# Coaching layer
+# Vorlagen-Coaching / Draft coaching
 
-Edition: CryoSys Enterprise v3. Factory mode: dense. Gate: Q 0.90, PIS 0.82, SafeMode 2.
+## 1. Passendes Thema auswählen / Select a use case
 
-## How to use a batch
+| Thema | Wann sinnvoll / When to use |
+| --- | --- |
+| account-closure | Nachfragen zu einer Kontoschließung und Abrechnung |
+| decline-outreach | Ein nicht genutztes Angebot höflich ablehnen |
+| cancel-confirm | Schriftliche Kündigungsbestätigung anfordern |
+| security-login | Unbekannte Anmeldung beim Anbieter melden |
+| trial-end | Ende einer Testphase klären |
+| invoice | Unklare Rechnung hinterfragen |
+| reschedule | Termin neu vereinbaren |
+| late-reply | Verspätete Antwort formulieren |
+| complaint | Nachfrage/Beschwerde nach unbeantworteter Erstmeldung |
+| meeting | Termin und Agenda bestätigen |
+| reference | Referenz erbitten |
+| repair | Reparaturbedarf melden |
 
-1. Pick the use case, then the language. Use `multi` when the recipient may answer in either language.
-2. Copy subject and body from the suite.
-3. Replace every token. If a token is still in the text, do not send.
-4. Send only from the mailbox that owns the case. This public repo is not a send button.
+## 2. Sprache und Ton
 
-## Batch choice
+- **DE**: deutschsprachiger Entwurf.
+- **EN**: englischsprachiger Entwurf.
+- **MULTI**: zweisprachige Vorlage, **nicht** automatische Übersetzung.
+- **formal, firm, brief, warm**: katalogisierte Tonvarianten; Ton und Inhalt selbst prüfen.
 
-- account-closure: payout and statement after a closure notice, still unanswered.
-- decline-outreach: close a vendor question without a sales thread.
-- cancel-confirm: lock the end date and the backup window.
-- security-login: only if the device or place was not yours.
-- trial-end: stop a conversion before the charge date.
-- invoice: ask for a line breakdown before paying a disputed bill.
-- reschedule, meeting, late-reply, reference: ordinary coordination.
-- complaint: second contact, after a first request got no answer.
-- repair: defect plus two visit windows.
+## 3. Bearbeiten, prüfen, kopieren
 
-## What this suite does not do
+1. Vorlage im Katalog auswählen.
+2. Betreff und Nachricht in den Textfeldern bearbeiten.
+3. Offene `[TOKEN]`-Platzhalter prüfen.
+4. `Geprüften Text kopieren` ist nur bei nicht leeren Feldern und null erkannten Platzhaltern aktiviert.
+5. `Vorlage kopieren` kopiert das **unbearbeitete** Muster, auch wenn es Platzhalter enthält.
+6. Abschließend im eigenen Mailprogramm Empfänger, Fristen, Zahlen und alle Aussagen verifizieren.
 
-It does not store a live inbox, send mail, or fill bank details. Tokens stay empty on purpose.
+## Grenzen / Limits
+
+- Keine Verbindung zu Gmail, Outlook oder anderen Mailboxen.
+- Kein automatischer Versand oder Speicherung der Bearbeitung.
+- Keine KI-Generierung, automatische Faktenprüfung oder Rechtsberatung.
+- Ein vollständig ersetztes `[TOKEN]` sagt **nichts** über sachliche Korrektheit aus.
+- Der Katalog ist anonymisiert, aber reale Werte im eigenen Browser sind nicht automatisch Ende-zu-Ende-verschlüsselt.
