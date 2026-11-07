@@ -3,7 +3,7 @@
 - Batch: Cancellation confirmation
 - Language: de
 - Tone: formal
-- Tokens: [NAME], [COMPANY], [REFERENCE], [DATE], [EMAIL], [SUPPORT], [CONTRACT], [END DATE]
+- Tokens: [COMPANY], [CONTRACT], [DATE], [EMAIL], [END DATE], [NAME], [SUPPORT]
 
 Replace every token before sending. This file contains no live mailbox data.
 

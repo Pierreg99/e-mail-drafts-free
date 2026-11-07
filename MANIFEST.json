@@ -1,13 +1,24 @@
 {
   "name": "e-mail-drafts-free",
-  "edition": "CryoSys Enterprise v3",
-  "factory_mode": "dense",
-  "quality_gate": {"Q": 0.9, "PIS": 0.82, "safe_mode": 2},
-  "anonymized": true,
+  "product": "CryoPG Draft Studio",
+  "version": "1.1.0",
+  "status": "feature-branch-under-review",
+  "runtime": "static HTML, CSS and JavaScript modules",
   "languages": ["en", "de", "multi"],
   "batches": 12,
   "drafts": 36,
-  "deploy": "static GitHub Pages from repository root",
-  "human_artifact": "index.html",
-  "internal_packet": ["MANIFEST.json", "docs/ANONYMIZATION.md", "docs/COACHING.md"]
+  "anonymized_catalog": true,
+  "automatic_sending": false,
+  "mailbox_integration": false,
+  "api_key_required": false,
+  "browser_edit_persistence": false,
+  "quality_gates": {
+    "catalog_validation": "implemented; CI result pending",
+    "unit_tests": "implemented; CI result pending",
+    "desktop_browser": "not yet evidenced",
+    "mobile_browser": "not yet evidenced",
+    "security_review": "pending"
+  },
+  "canonical_catalog": "data/drafts.json",
+  "evidence": "docs/QUALITY.md"
 }

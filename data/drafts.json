@@ -181,14 +181,13 @@
       "subject": "Please confirm cancellation of [CONTRACT]",
       "body": "Hello [SUPPORT],\n\nPlease confirm in writing that contract [CONTRACT] with [COMPANY] was cancelled on [DATE] and ends on [END DATE].\n\nPlease also state:\n1. The last day of service.\n2. What data or mailboxes will be deleted.\n3. Until when I can download invoices.\n4. Whether any further charge is planned.\n\nI will keep a backup before the end date. Please reply to [EMAIL].\n\nKind regards,\n[NAME]\n",
       "tokens": [
-        "[NAME]",
         "[COMPANY]",
-        "[REFERENCE]",
+        "[CONTRACT]",
         "[DATE]",
         "[EMAIL]",
-        "[SUPPORT]",
-        "[CONTRACT]",
-        "[END DATE]"
+        "[END DATE]",
+        "[NAME]",
+        "[SUPPORT]"
       ]
     },
     {
@@ -199,14 +198,13 @@
       "subject": "Bitte Kuendigung von [CONTRACT] bestaetigen",
       "body": "Guten Tag [SUPPORT],\n\nbitte bestaetigen Sie schriftlich, dass der Vertrag [CONTRACT] bei [COMPANY] am [DATE] gekuendigt wurde und am [END DATE] endet.\n\nBitte nennen Sie ausserdem:\n1. den letzten Leistungstag,\n2. welche Daten oder Postfaecher geloescht werden,\n3. bis wann ich Rechnungen herunterladen kann,\n4. ob noch eine Belastung geplant ist.\n\nIch sichere die Daten vor dem Enddatum. Bitte antworten Sie an [EMAIL].\n\nMit freundlichen Gruessen\n[NAME]\n",
       "tokens": [
-        "[NAME]",
         "[COMPANY]",
-        "[REFERENCE]",
+        "[CONTRACT]",
         "[DATE]",
         "[EMAIL]",
-        "[SUPPORT]",
-        "[CONTRACT]",
-        "[END DATE]"
+        "[END DATE]",
+        "[NAME]",
+        "[SUPPORT]"
       ]
     },
     {
@@ -217,14 +215,13 @@
       "subject": "Confirm cancellation / Kuendigung bestaetigen: [CONTRACT]",
       "body": "Hello [SUPPORT],\n\nEN: Please confirm that contract [CONTRACT] at [COMPANY], cancelled on [DATE], ends on [END DATE]. State the last service day, what will be deleted, how long invoices stay downloadable, and whether another charge is planned. Reply to [EMAIL].\n\nDE: Bitte bestaetigen Sie, dass Vertrag [CONTRACT] bei [COMPANY], Kuendigung am [DATE], am [END DATE] endet. Nennen Sie letzten Leistungstag, Loeschumfang, Rechnungszugriff und ob noch eine Belastung kommt. Antwort an [EMAIL].\n\nKind regards / Mit freundlichen Gruessen\n[NAME]\n",
       "tokens": [
-        "[NAME]",
         "[COMPANY]",
-        "[REFERENCE]",
+        "[CONTRACT]",
         "[DATE]",
         "[EMAIL]",
-        "[SUPPORT]",
-        "[CONTRACT]",
-        "[END DATE]"
+        "[END DATE]",
+        "[NAME]",
+        "[SUPPORT]"
       ]
     },
     {
@@ -235,14 +232,12 @@
       "subject": "Unrecognized sign-in on [DATE]",
       "body": "Hello [SUPPORT],\n\nI received a sign-in alert for account [ACCOUNT] on [DATE] from a device or place I do not recognize: [DEVICE OR PLACE].\n\nThat sign-in was not me. Please lock the session, confirm whether the account is still secure, and tell me which step I should take next from a previously used device.\n\nPlease reply to [EMAIL].\n\nKind regards,\n[NAME]\n",
       "tokens": [
-        "[NAME]",
-        "[COMPANY]",
-        "[REFERENCE]",
-        "[DATE]",
-        "[EMAIL]",
-        "[SUPPORT]",
         "[ACCOUNT]",
-        "[DEVICE OR PLACE]"
+        "[DATE]",
+        "[DEVICE OR PLACE]",
+        "[EMAIL]",
+        "[NAME]",
+        "[SUPPORT]"
       ]
     },
     {
@@ -253,14 +248,12 @@
       "subject": "Unbekannte Anmeldung am [DATE]",
       "body": "Guten Tag [SUPPORT],\n\nich habe eine Anmeldung fuer das Konto [ACCOUNT] am [DATE] erhalten, die ich nicht zuordnen kann: [DEVICE OR PLACE].\n\nDiese Anmeldung war nicht von mir. Bitte sperren Sie die Sitzung, bestaetigen Sie den Kontostatus und nennen Sie den naechsten Schritt, den ich von einem bereits genutzten Geraet aus machen soll.\n\nBitte antworten Sie an [EMAIL].\n\nMit freundlichen Gruessen\n[NAME]\n",
       "tokens": [
-        "[NAME]",
-        "[COMPANY]",
-        "[REFERENCE]",
-        "[DATE]",
-        "[EMAIL]",
-        "[SUPPORT]",
         "[ACCOUNT]",
-        "[DEVICE OR PLACE]"
+        "[DATE]",
+        "[DEVICE OR PLACE]",
+        "[EMAIL]",
+        "[NAME]",
+        "[SUPPORT]"
       ]
     },
     {
@@ -271,14 +264,12 @@
       "subject": "Unrecognized sign-in / unbekannte Anmeldung [DATE]",
       "body": "Hello [SUPPORT],\n\nEN: The [DATE] sign-in on account [ACCOUNT] from [DEVICE OR PLACE] was not me. Please lock that session, confirm the account status, and tell me the next step from a known device. Reply to [EMAIL].\n\nDE: Die Anmeldung am [DATE] auf Konto [ACCOUNT] von [DEVICE OR PLACE] war nicht von mir. Bitte Sitzung sperren, Status bestaetigen und den naechsten Schritt von einem bekannten Geraet nennen. Antwort an [EMAIL].\n\nKind regards / Mit freundlichen Gruessen\n[NAME]\n",
       "tokens": [
-        "[NAME]",
-        "[COMPANY]",
-        "[REFERENCE]",
-        "[DATE]",
-        "[EMAIL]",
-        "[SUPPORT]",
         "[ACCOUNT]",
-        "[DEVICE OR PLACE]"
+        "[DATE]",
+        "[DEVICE OR PLACE]",
+        "[EMAIL]",
+        "[NAME]",
+        "[SUPPORT]"
       ]
     },
     {
@@ -289,11 +280,9 @@
       "subject": "Do not renew the trial on [WORKSPACE]",
       "body": "Hello [SUPPORT],\n\nPlease do not convert the trial on workspace [WORKSPACE] into a paid plan when it ends on [DATE]. I do not need the extra features.\n\nPlease confirm that no charge will be made to the payment method on file, and reply to [EMAIL].\n\nThanks,\n[NAME]\n",
       "tokens": [
-        "[NAME]",
-        "[COMPANY]",
-        "[REFERENCE]",
         "[DATE]",
         "[EMAIL]",
+        "[NAME]",
         "[SUPPORT]",
         "[WORKSPACE]"
       ]
@@ -306,11 +295,9 @@
       "subject": "Testphase auf [WORKSPACE] nicht verlaengern",
       "body": "Guten Tag [SUPPORT],\n\nbitte wandeln Sie die Testphase im Workspace [WORKSPACE] am [DATE] nicht in einen kostenpflichtigen Plan um. Die Zusatzfunktionen brauche ich nicht.\n\nBitte bestaetigen Sie, dass keine Abbuchung erfolgt, und antworten Sie an [EMAIL].\n\nDanke\n[NAME]\n",
       "tokens": [
-        "[NAME]",
-        "[COMPANY]",
-        "[REFERENCE]",
         "[DATE]",
         "[EMAIL]",
+        "[NAME]",
         "[SUPPORT]",
         "[WORKSPACE]"
       ]
@@ -323,11 +310,9 @@
       "subject": "Do not renew trial / Testphase nicht verlaengern: [WORKSPACE]",
       "body": "Hello [SUPPORT],\n\nEN: Do not convert the [WORKSPACE] trial into a paid plan on [DATE]. Please confirm that no charge will be made. Reply to [EMAIL].\n\nDE: Bitte die Testphase in [WORKSPACE] am [DATE] nicht kostenpflichtig machen. Bitte bestaetigen, dass nichts abgebucht wird. Antwort an [EMAIL].\n\nThanks / Danke\n[NAME]\n",
       "tokens": [
-        "[NAME]",
-        "[COMPANY]",
-        "[REFERENCE]",
         "[DATE]",
         "[EMAIL]",
+        "[NAME]",
         "[SUPPORT]",
         "[WORKSPACE]"
       ]
@@ -525,11 +510,10 @@
       "subject": "Complaint / Beschwerde: [REFERENCE]",
       "body": "Hello [SUPPORT],\n\nEN: I wrote on [DATE] about [REFERENCE] and got no answer. Please open a complaint, send the reference, response deadline, current status, and the team name. Reply to [EMAIL].\n\nDE: Ich habe am [DATE] zu [REFERENCE] geschrieben und keine Antwort erhalten. Bitte Beschwerde eroeffnen und Aktenzeichen, Antwortfrist, Stand und Team nennen. Antwort an [EMAIL].\n\nKind regards / Mit freundlichen Gruessen\n[NAME]\n",
       "tokens": [
-        "[NAME]",
-        "[COMPANY]",
-        "[REFERENCE]",
         "[DATE]",
         "[EMAIL]",
+        "[NAME]",
+        "[REFERENCE]",
         "[SUPPORT]"
       ]
     },

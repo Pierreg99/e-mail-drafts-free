@@ -3,7 +3,7 @@
 - Batch: Complaint escalation
 - Language: multi
 - Tone: firm
-- Tokens: [NAME], [COMPANY], [REFERENCE], [DATE], [EMAIL], [SUPPORT]
+- Tokens: [DATE], [EMAIL], [NAME], [REFERENCE], [SUPPORT]
 
 Replace every token before sending. This file contains no live mailbox data.
 

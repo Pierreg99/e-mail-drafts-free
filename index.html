@@ -1,47 +1,117 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="de">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Email drafts free</title>
-  <meta name="description" content="Anonymized email draft batches in English, German, and bilingual form. Replace every token before sending.">
-  <link rel="stylesheet" href="styles.css">
+  <meta name="theme-color" content="#0b1224">
+  <meta name="referrer" content="no-referrer">
+  <meta name="description" content="36 anonymisierte E-Mail-Vorlagen in Deutsch, Englisch und zweisprachig. Lokal bearbeiten, prüfen und kopieren – ohne E-Mail-Versand.">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; connect-src 'self'; img-src 'self'; object-src 'none'; base-uri 'none'; form-action 'none'">
+  <title>Draft Studio · CryoPG</title>
+  <link rel="stylesheet" href="./styles.css">
 </head>
 <body>
-  <header>
-    <h1>Email drafts free</h1>
-    <p class="lede">Twelve use-case batches. Each batch has English, German, and a bilingual draft. Nothing here is a real mailbox.</p>
-    <div class="banner">
-      <strong>Anonymized.</strong>
-      Replace every [TOKEN] before you send. Do not paste account numbers, IBANs, or private thread text into this public page.
+  <a class="skip-link" href="#workspace">Zum Editor springen</a>
+  <header class="topbar">
+    <div class="topbar-inner">
+      <a class="brand" href="./index.html" aria-label="Draft Studio Startseite">
+        <span class="brand-mark" aria-hidden="true">✧</span>
+        <span>CRYO<span class="accent">PG</span><small> / DRAFT STUDIO</small></span>
+      </a>
+      <nav aria-label="Projektlinks" class="nav-links">
+        <a href="./README.md">README</a>
+        <a href="./docs/ANONYMIZATION.md">Datenschutzregeln</a>
+        <a href="./docs/COACHING.md">Anleitung</a>
+      </nav>
+      <span class="status-tag"><span aria-hidden="true" class="status-dot"></span> STATISCH · KEIN VERSAND</span>
     </div>
   </header>
-  <main>
-    <div class="controls">
-      <input id="q" type="search" placeholder="Search subject or body" aria-label="Search drafts">
-      <select id="lang" aria-label="Language">
-        <option value="all">All languages</option>
-        <option value="en">English</option>
-        <option value="de">Deutsch</option>
-        <option value="multi">Multilingual</option>
-      </select>
-      <select id="batch" aria-label="Use case">
-        <option value="all">All use cases</option>
-      </select>
-      <select id="tone" aria-label="Tone">
-        <option value="all">All tones</option>
-        <option value="formal">Formal</option>
-        <option value="firm">Firm</option>
-        <option value="brief">Brief</option>
-        <option value="warm">Warm</option>
-      </select>
-    </div>
-    <p class="note" id="count"></p>
-    <div class="grid" id="list"></div>
+
+  <main id="workspace" class="shell">
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-copy">
+        <div class="eyebrow">CRYOPG.IT <span class="eyebrow-line" aria-hidden="true"></span> OPEN TEMPLATES</div>
+        <h1 id="hero-title">Schreiben mit <span class="gradient-text">Klarheit.</span></h1>
+        <p>Finde eine passende Vorlage, prüfe ihre Formulierungen und bearbeite sie direkt. Alles ohne Benutzerkonto, API-Schlüssel oder E-Mail-Zugriff.</p>
+        <div class="hero-actions">
+          <a class="button-primary" href="#draft-list">Vorlagen entdecken <span aria-hidden="true">↘</span></a>
+          <a class="button-ghost" href="./drafts/INDEX.md">Markdown &amp; PDF ↗</a>
+        </div>
+      </div>
+      <div class="hero-art" aria-hidden="true">
+        <div class="orbit orbit-one"></div><div class="orbit orbit-two"></div>
+        <div class="mail-art"><span class="mail-fold"></span><span class="mail-glow"></span></div>
+        <span class="art-label label-top">EN / DE / MULTI</span>
+        <span class="art-label label-bottom">SAFE DRAFT · 01</span>
+      </div>
+    </section>
+
+    <section class="metrics" aria-label="Katalogüberblick">
+      <div class="metric"><strong id="total-count">—</strong><span>Vorlagen</span></div>
+      <div class="metric"><strong id="batch-count">—</strong><span>Themen</span></div>
+      <div class="metric"><strong>03</strong><span>Sprachversionen</span></div>
+      <div class="metric metric-safe"><strong>100%</strong><span>manuelle Versandkontrolle</span></div>
+    </section>
+
+    <section class="workbench" aria-label="E-Mail-Vorlagen und Editor">
+      <aside class="library-panel" aria-labelledby="library-title">
+        <div class="panel-top">
+          <div><p class="section-kicker">01 / LIBRARY</p><h2 id="library-title">Vorlagenkatalog</h2></div>
+          <span id="result-count" class="result-count" role="status" aria-live="polite">Lade …</span>
+        </div>
+        <div class="filters">
+          <label for="q">Suche <span class="label-en">/ Search</span></label>
+          <input type="search" id="q" placeholder="Betreff, Thema oder Text …" autocomplete="off">
+          <div class="filter-row">
+            <div><label for="lang">Sprache</label><select id="lang">
+              <option value="all">Alle Sprachen</option>
+              <option value="de">Deutsch</option><option value="en">English</option>
+              <option value="multi">Zweisprachig</option>
+            </select></div>
+            <div><label for="tone">Ton</label><select id="tone">
+              <option value="all">Alle Tonarten</option>
+              <option value="formal">Formell</option><option value="firm">Bestimmt</option>
+              <option value="brief">Kurz</option><option value="warm">Freundlich</option>
+            </select></div>
+          </div>
+          <label for="batch">Anwendungsfall</label>
+          <select id="batch"><option value="all">Alle Anwendungsfälle</option></select>
+          <button id="clear-filters" class="filter-clear" type="button">Filter zurücksetzen</button>
+        </div>
+        <div id="load-error" class="message error" role="alert" hidden></div>
+        <div id="draft-list" class="draft-list" aria-label="Suchergebnisse"></div>
+        <p id="empty-state" class="empty-state" hidden>Keine passende Vorlage gefunden. Ändere die Filter oder setze sie zurück.</p>
+      </aside>
+
+      <section class="editor-panel" aria-labelledby="editor-title">
+        <div class="panel-top">
+          <div><p class="section-kicker">02 / WORKSPACE</p><h2 id="editor-title">Entwurf bearbeiten</h2></div>
+          <span class="editor-mark" aria-hidden="true">✦</span>
+        </div>
+        <div id="editor-empty" class="editor-empty"><span aria-hidden="true">✉</span><h3>Wähle eine Vorlage</h3><p>Wähle links einen Entwurf aus, um ihn zu bearbeiten und zu prüfen.</p></div>
+        <div id="editor-content" hidden>
+          <div class="selection-meta"><span id="selected-batch"></span><span id="selected-language"></span><span id="selected-tone"></span></div>
+          <label for="subject">Betreff <span class="label-en">/ Subject</span></label>
+          <textarea id="subject" rows="2" autocomplete="off" spellcheck="true"></textarea>
+          <label for="body">Nachricht <span class="label-en">/ Message</span></label>
+          <textarea id="body" rows="15" autocomplete="off" spellcheck="true"></textarea>
+          <div class="review-panel" aria-live="polite">
+            <div class="review-heading"><strong id="review-label">Noch nicht versandfertig</strong><span id="token-count"></span></div>
+            <div id="token-list" class="token-list"></div>
+            <p id="review-help">Bitte ergänze alle Platzhalter und prüfe die Angaben selbst.</p>
+          </div>
+          <div class="editor-actions">
+            <button class="button-primary" type="button" id="copy-ready" disabled>Geprüften Text kopieren</button>
+            <button class="button-secondary" type="button" id="copy-template">Vorlage kopieren</button>
+            <button class="button-ghost reset-button" type="button" id="reset-draft">Original wiederherstellen</button>
+          </div>
+          <p id="copy-status" class="copy-status" role="status" aria-live="polite"></p>
+        </div>
+        <div class="privacy-note"><span aria-hidden="true">◇</span><p><strong>Privacy by design.</strong> Deine Bearbeitungen werden von dieser Anwendung weder gespeichert noch versendet. Gib vertrauliche Konto- oder Bankdaten möglichst erst in deinem eigenen Mailprogramm ein. Prüfe Empfänger, Inhalt und Anhänge vor jedem Versand.</p></div>
+      </section>
+    </section>
   </main>
-  <footer>
-    <p>Static suite. Enable GitHub Pages on the main branch, root folder. Catalog: data/drafts.json.</p>
-  </footer>
-  <script src="app.js"></script>
+  <footer><div class="footer-inner"><span>CRYOPG.IT / DRAFT STUDIO</span><span>Open templates · No inbox access · No automatic sending</span><a href="https://github.com/Pierreg99/e-mail-drafts-free">GitHub ↗</a></div></footer>
+  <script type="module" src="./app.js"></script>
 </body>
 </html>

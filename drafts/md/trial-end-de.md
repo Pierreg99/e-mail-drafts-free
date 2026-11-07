@@ -3,7 +3,7 @@
 - Batch: Trial ending
 - Language: de
 - Tone: brief
-- Tokens: [NAME], [COMPANY], [REFERENCE], [DATE], [EMAIL], [SUPPORT], [WORKSPACE]
+- Tokens: [DATE], [EMAIL], [NAME], [SUPPORT], [WORKSPACE]
 
 Replace every token before sending. This file contains no live mailbox data.
 

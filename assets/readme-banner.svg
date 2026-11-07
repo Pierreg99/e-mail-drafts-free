@@ -1,8 +1,22 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="280" viewBox="0 0 1200 280" role="img" aria-label="e-mail-drafts-free">
-  <rect width="1200" height="280" rx="24" fill="#0A0A0A"/>
-  <rect x="16" y="16" width="1168" height="248" rx="16" fill="#141414" stroke="#2A2A28"/>
-  <rect x="16" y="16" width="8" height="248" fill="#7EB8C9"/>
-  <text x="56" y="108" fill="#A8A49B" font-family="Segoe UI, Inter, system-ui, sans-serif" font-size="22" letter-spacing="4">PIERREG99</text>
-  <text x="56" y="168" fill="#ECE8E1" font-family="Segoe UI, Inter, system-ui, sans-serif" font-size="42" font-weight="600">e-mail-drafts-free</text>
-  <text x="56" y="214" fill="#7EB8C9" font-family="Segoe UI, Inter, system-ui, sans-serif" font-size="18">Core Lite README · ein Akzent · kein Platzhalter</text>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="320" viewBox="0 0 1200 320" role="img" aria-labelledby="title desc">
+  <title id="title">CryoPG Draft Studio</title>
+  <desc id="desc">Abstract neon envelope illustration and project title; decorative vector, not a browser screenshot.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#0B1224"/><stop offset="1" stop-color="#1B2C50"/></linearGradient>
+    <linearGradient id="neon" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#69E9F4"/><stop offset=".55" stop-color="#A6A8FF"/><stop offset="1" stop-color="#FF8BBB"/></linearGradient>
+  </defs>
+  <rect width="1200" height="320" rx="24" fill="url(#bg)"/>
+  <rect x="18" y="18" width="1164" height="284" rx="18" fill="none" stroke="#354966"/>
+  <path d="M18 78V36Q18 18 36 18H340" stroke="#69E9F4" stroke-width="3" fill="none"/>
+  <text x="66" y="83" fill="#69E9F4" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="700" letter-spacing="4">CRYOPG.IT / OPEN TEMPLATES</text>
+  <text x="64" y="168" fill="#F1F7FF" font-family="Segoe UI,Arial,sans-serif" font-size="61" font-weight="700">Draft Studio</text>
+  <text x="68" y="211" fill="#B4C9DC" font-family="Segoe UI,Arial,sans-serif" font-size="24">36 drafts · 12 workflows · EN / DE / MULTI</text>
+  <text x="68" y="261" fill="#A6A8FF" font-family="Segoe UI,Arial,sans-serif" font-size="17">PRIVACY FIRST    /    HUMAN REVIEW    /    NO AUTO-SEND</text>
+  <ellipse cx="946" cy="157" rx="210" ry="90" fill="none" stroke="#3E5C86" transform="rotate(-28 946 157)"/>
+  <ellipse cx="946" cy="157" rx="130" ry="140" fill="none" stroke="#674D85" transform="rotate(25 946 157)"/>
+  <rect x="857" y="96" width="182" height="120" rx="13" fill="#243859" stroke="#69E9F4" stroke-width="3" transform="rotate(-10 948 156)"/>
+  <path d="M858 100L948 164L1038 100" fill="none" stroke="url(#neon)" stroke-width="9" transform="rotate(-10 948 156)"/>
+  <circle cx="1045" cy="69" r="7" fill="#FF8BBB"/>
+  <circle cx="796" cy="227" r="5" fill="#69E9F4"/>
+  <text x="1150" y="281" fill="#8EABCC" text-anchor="end" font-size="12" font-family="monospace">VECTOR ART · NOT A SCREENSHOT</text>
 </svg>

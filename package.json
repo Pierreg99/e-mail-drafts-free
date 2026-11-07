@@ -1,0 +1,17 @@
+{
+  "name": "e-mail-drafts-free",
+  "version": "1.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Dependency-free, privacy-conscious multilingual email template workbench",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "test": "node --test",
+    "validate": "node scripts/validate-catalog.mjs",
+    "check": "npm run validate && npm run validate:exports && npm run check:design && npm test",
+    "check:design": "node scripts/check-design.mjs",
+    "validate:exports": "node scripts/validate-exports.mjs"
+  }
+}
