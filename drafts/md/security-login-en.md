@@ -3,7 +3,7 @@
 - Batch: Unrecognized login
 - Language: en
 - Tone: firm
-- Tokens: [NAME], [COMPANY], [REFERENCE], [DATE], [EMAIL], [SUPPORT], [ACCOUNT], [DEVICE OR PLACE]
+- Tokens: [ACCOUNT], [DATE], [DEVICE OR PLACE], [EMAIL], [NAME], [SUPPORT]
 
 Replace every token before sending. This file contains no live mailbox data.
 
